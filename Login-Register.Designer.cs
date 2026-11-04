@@ -3,12 +3,12 @@
     partial class Form1
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
@@ -23,8 +23,8 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -35,8 +35,8 @@
             cmbRole = new ComboBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            textBox3 = new TextBox();
             textBox4 = new TextBox();
+            textBox3 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -62,7 +62,6 @@
             txtEmail.Size = new Size(227, 23);
             txtEmail.TabIndex = 1;
             txtEmail.Text = "\r\n";
-            txtEmail.TextChanged += this.textBox1_TextChanged;
             // 
             // txtPassword
             // 
@@ -83,7 +82,6 @@
             cmbRole.Name = "cmbRole";
             cmbRole.Size = new Size(227, 23);
             cmbRole.TabIndex = 3;
-            cmbRole.SelectedIndexChanged += this.comboBox1_SelectedIndexChanged;
             // 
             // pictureBox1
             // 
@@ -109,25 +107,25 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(294, 450);
             panel1.TabIndex = 5;
-            panel1.Paint += this.panel1_Paint;
-            // 
-            // textBox3
-            // 
-            textBox3.Font = new Font("Trebuchet MS", 19.75F, FontStyle.Bold);
-            textBox3.Location = new Point(47, 73);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(152, 38);
-            textBox3.TabIndex = 4;
-            textBox3.Text = "Welcome!";
             // 
             // textBox4
             // 
+            textBox4.BorderStyle = BorderStyle.None;
             textBox4.Location = new Point(47, 106);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(176, 23);
+            textBox4.Size = new Size(176, 16);
             textBox4.TabIndex = 5;
             textBox4.Text = "Please Fill Out The Forms Below.";
-            textBox4.TextChanged += this.textBox4_TextChanged;
+            // 
+            // textBox3
+            // 
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Trebuchet MS", 19.75F, FontStyle.Bold);
+            textBox3.Location = new Point(47, 73);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(152, 31);
+            textBox3.TabIndex = 4;
+            textBox3.Text = "Welcome!";
             // 
             // Form1
             // 
