@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            SKIBIDI = new Button();
             SuspendLayout();
             // 
-            // button1
+            // SKIBIDI
             // 
-            button1.Location = new Point(273, 51);
-            button1.Name = "button1";
-            button1.Size = new Size(242, 136);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            SKIBIDI.Location = new Point(273, 51);
+            SKIBIDI.Name = "SKIBIDI";
+            SKIBIDI.Size = new Size(242, 38);
+            SKIBIDI.TabIndex = 0;
+            SKIBIDI.Text = "SKIBIDI";
+            SKIBIDI.UseVisualStyleBackColor = true;
+            SKIBIDI.Click += button1_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(SKIBIDI);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
+        private Button SKIBIDI;
     }
 }

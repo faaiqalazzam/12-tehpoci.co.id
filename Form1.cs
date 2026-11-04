@@ -11,5 +11,10 @@ namespace Project_KLP_12
         {
 
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
