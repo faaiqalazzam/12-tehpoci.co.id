@@ -73,6 +73,16 @@ namespace Project_KLP_12.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap School_Of_Digital_Era___3_ {
+            get {
+                object obj = ResourceManager.GetObject("School Of Digital Era, (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap School_Of_Digital_Era_1 {
             get {
                 object obj = ResourceManager.GetObject("School Of Digital Era,1", resourceCulture);
