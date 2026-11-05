@@ -2,6 +2,6 @@
 {
     public interface IUserRepository
     {
-        UserModel Authenticate(string email, string password, string role);
+        UserModel Authenticate(string Email, String Password, String Role);
     }
 }

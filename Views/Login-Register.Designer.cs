@@ -133,7 +133,7 @@
             // 
             // userRepositoryBindingSource
             // 
-            userRepositoryBindingSource.DataSource = typeof(Models.UserRepository);
+            userRepositoryBindingSource.DataSource = typeof(Models.IUserRepository);
             // 
             // Form1
             // 
