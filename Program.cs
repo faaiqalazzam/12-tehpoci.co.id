@@ -1,17 +1,24 @@
+using System;
+using System.Windows.Forms;
+using Project_KLP_12.Models;
+using Project_KLP_12.Presenters;
+using Project_KLP_12.Views;
+
 namespace Project_KLP_12
 {
-    internal static class Program
+    static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            ILoginView loginView = new Form1();
+            IUserRepository userRepository = new UserRepository();
+            new LoginPresenter(loginView, userRepository);
+
+            Application.Run((Form)loginView);
         }
     }
 }

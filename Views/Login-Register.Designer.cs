@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             btnLogin = new Button();
             txtEmail = new TextBox();
             txtPassword = new TextBox();
@@ -36,8 +37,10 @@
             panel1 = new Panel();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
+            userRepositoryBindingSource = new BindingSource(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnLogin
@@ -60,7 +63,7 @@
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(227, 23);
             txtEmail.TabIndex = 1;
-            txtEmail.Text = "\r\n";
+            txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
             // 
@@ -69,11 +72,12 @@
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(227, 23);
             txtPassword.TabIndex = 2;
-            txtPassword.Text = "\r\n";
             txtPassword.UseSystemPasswordChar = true;
+            txtPassword.TextChanged += txtPassword_TextChanged;
             // 
             // cmbRole
             // 
+            cmbRole.DataBindings.Add(new Binding("SelectedItem", userRepositoryBindingSource, "", true));
             cmbRole.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbRole.FormattingEnabled = true;
             cmbRole.Items.AddRange(new object[] { "Siswa", "Guru", "Operator" });
@@ -106,6 +110,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(294, 453);
             panel1.TabIndex = 5;
+            panel1.Paint += panel1_Paint;
             // 
             // textBox4
             // 
@@ -126,6 +131,10 @@
             textBox3.TabIndex = 4;
             textBox3.Text = "Welcome!";
             // 
+            // userRepositoryBindingSource
+            // 
+            userRepositoryBindingSource.DataSource = typeof(Models.UserRepository);
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -139,6 +148,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).EndInit();
             ResumeLayout(false);
         }
 
@@ -152,5 +162,6 @@
         private Panel panel1;
         private TextBox textBox4;
         private TextBox textBox3;
+        private BindingSource userRepositoryBindingSource;
     }
 }
