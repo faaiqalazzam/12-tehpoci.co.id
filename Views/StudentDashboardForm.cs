@@ -55,5 +55,10 @@ namespace Project_KLP_12
         {
 
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

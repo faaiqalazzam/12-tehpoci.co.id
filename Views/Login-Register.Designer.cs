@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             btnLogin = new Button();
             txtEmail = new TextBox();
             txtPassword = new TextBox();
@@ -87,10 +86,10 @@
             // 
             pictureBox1.BackgroundImage = Properties.Resources.School_Of_Digital_Era_1;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(-3, -4);
+            pictureBox1.InitialImage = null;
+            pictureBox1.Location = new Point(-23, -1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(758, 450);
+            pictureBox1.Size = new Size(783, 450);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             // 
@@ -105,7 +104,7 @@
             panel1.Controls.Add(btnLogin);
             panel1.Location = new Point(506, -4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(294, 450);
+            panel1.Size = new Size(294, 453);
             panel1.TabIndex = 5;
             // 
             // textBox4
