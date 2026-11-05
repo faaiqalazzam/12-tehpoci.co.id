@@ -33,14 +33,14 @@
             txtEmail = new TextBox();
             txtPassword = new TextBox();
             cmbRole = new ComboBox();
+            userRepositoryBindingSource = new BindingSource(components);
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
             textBox4 = new TextBox();
             textBox3 = new TextBox();
-            userRepositoryBindingSource = new BindingSource(components);
+            ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).BeginInit();
             SuspendLayout();
             // 
             // btnLogin
@@ -85,6 +85,10 @@
             cmbRole.Name = "cmbRole";
             cmbRole.Size = new Size(227, 23);
             cmbRole.TabIndex = 3;
+            // 
+            // userRepositoryBindingSource
+            // 
+            userRepositoryBindingSource.DataSource = typeof(Models.IUserRepository);
             // 
             // pictureBox1
             // 
@@ -131,10 +135,6 @@
             textBox3.TabIndex = 4;
             textBox3.Text = "Welcome!";
             // 
-            // userRepositoryBindingSource
-            // 
-            userRepositoryBindingSource.DataSource = typeof(Models.IUserRepository);
-            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -145,10 +145,10 @@
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).EndInit();
             ResumeLayout(false);
         }
 

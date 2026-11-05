@@ -164,7 +164,7 @@
             btnMenuJadwal.Name = "btnMenuJadwal";
             btnMenuJadwal.Size = new Size(85, 36);
             btnMenuJadwal.TabIndex = 3;
-            btnMenuJadwal.Text = "Jadwal";
+            btnMenuJadwal.Text = "PoinJiwa";
             btnMenuJadwal.TextAlign = ContentAlignment.MiddleLeft;
             btnMenuJadwal.UseVisualStyleBackColor = true;
             // 

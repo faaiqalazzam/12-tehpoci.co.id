@@ -11,10 +11,10 @@ namespace Project_KLP_12
         public Form1()
         {
             InitializeComponent();
+
+            cmbRole.SelectedItem = "Siswa";
         }
 
-        // Implementasi Interface ILoginView
-        // (Sesuaikan nama textBox1, textBox2, comboBox1 jika di designer kamu bernama lain)
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string Email
         {
@@ -43,12 +43,12 @@ namespace Project_KLP_12
             set => MessageBox.Show(value);
         }
 
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public bool IsLoginSuccessful { get; set; }
 
         public event EventHandler LoginEvent;
 
-        // Menghubungkan tombol bawaan designer ke event Login MVP
         private void button1_Click(object sender, EventArgs e)
         {
             LoginEvent?.Invoke(this, EventArgs.Empty);
