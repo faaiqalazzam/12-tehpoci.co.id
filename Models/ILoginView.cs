@@ -11,7 +11,5 @@ namespace Project_KLP_12.Views
         bool IsLoginSuccessful { get; set; }
 
         event EventHandler LoginEvent;
-        void Show();
-        void Close();
     }
 }
