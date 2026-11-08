@@ -52,6 +52,10 @@ namespace Project_KLP_12
         private void button1_Click(object sender, EventArgs e)
         {
             LoginEvent?.Invoke(this, EventArgs.Empty);
+       
+            StudentDashboardForm dashboard = new StudentDashboardForm();
+            dashboard.Show(); 
+            this.Hide();      
         }
 
         private void Form1_Load(object sender, EventArgs e)

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project_KLP_12.Models;
+using Project_KLP_12.Presenters;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +10,20 @@ using System.Windows.Forms;
 
 namespace Project_KLP_12
 {
-    public partial class StudentDashboardForm : Form
+    public partial class StudentDashboardForm : Form, IStudentView
     {
+        private StudentPresenters _presenter;
         public StudentDashboardForm()
         {
             InitializeComponent();
+            _presenter = new StudentPresenters(this);
+            _presenter.LoadStudentsData();
+
+        }
+
+        public void DisplayStudentData(List<StudentModel> studentList)
+        {
+            dgvKelasHariIni.DataSource = studentList;
         }
 
         private void StudentDashboardForm_Load(object sender, EventArgs e)

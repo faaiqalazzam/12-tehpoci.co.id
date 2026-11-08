@@ -330,9 +330,9 @@
             // 
             panel2.BackColor = SystemColors.ControlLightLight;
             panel2.Controls.Add(textBox8);
-            panel2.Location = new Point(615, 69);
+            panel2.Location = new Point(616, 69);
             panel2.Name = "panel2";
-            panel2.Size = new Size(173, 207);
+            panel2.Size = new Size(172, 207);
             panel2.TabIndex = 18;
             // 
             // textBox8
@@ -350,9 +350,9 @@
             // 
             panel3.BackColor = SystemColors.ControlLightLight;
             panel3.Controls.Add(textBox9);
-            panel3.Location = new Point(615, 293);
+            panel3.Location = new Point(616, 293);
             panel3.Name = "panel3";
-            panel3.Size = new Size(173, 145);
+            panel3.Size = new Size(172, 145);
             panel3.TabIndex = 20;
             // 
             // textBox9
