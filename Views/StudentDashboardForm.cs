@@ -10,22 +10,28 @@ using System.Windows.Forms;
 
 namespace Project_KLP_12
 {
-    public partial class StudentDashboardForm : Form, IStudentView
+    public partial class StudentDashboardForm : Form
     {
-        private StudentPresenters _presenter;
-        public StudentDashboardForm()
+
+        private UserModel currentUser;
+        public void DisplayUserData(UserModel user)
+        {
+            userName1.Text = user.Name;
+            lblNamaSiswa.Text = user.Name;
+            lblKelasSiswa.Text = user.Kelas;
+            lblPoinSiswa.Text = user.Jiwa.ToString();
+
+        }
+
+        public StudentDashboardForm(UserModel user)
         {
             InitializeComponent();
-            _presenter = new StudentPresenters(this);
-            _presenter.LoadStudentsData();
+
+            currentUser = user;
+
+            DisplayUserData(currentUser);
 
         }
-
-        public void DisplayStudentData(List<StudentModel> studentList)
-        {
-            dgvKelasHariIni.DataSource = studentList;
-        }
-
         private void StudentDashboardForm_Load(object sender, EventArgs e)
         {
 
@@ -68,6 +74,16 @@ namespace Project_KLP_12
         }
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblNilaiRataRata_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }

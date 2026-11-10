@@ -1,8 +1,9 @@
+using Project_KLP_12.Models;
 using Project_KLP_12.Views;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using System.ComponentModel;
 
 namespace Project_KLP_12
 {
@@ -51,11 +52,19 @@ namespace Project_KLP_12
 
         private void button1_Click(object sender, EventArgs e)
         {
-            LoginEvent?.Invoke(this, EventArgs.Empty);
-       
-            StudentDashboardForm dashboard = new StudentDashboardForm();
-            dashboard.Show(); 
-            this.Hide();      
+            UserRepository repo = new UserRepository();
+            UserModel user = repo.Authenticate(txtEmail.Text, txtPassword.Text, cmbRole.Text);
+
+            if (user != null)
+            {
+                StudentDashboardForm dashboard = new StudentDashboardForm(user);
+                dashboard.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Login gagal, cek kembali email/password/role!");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)

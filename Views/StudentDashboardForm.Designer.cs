@@ -38,7 +38,7 @@
             btnMenuJadwal = new Button();
             btnMenuDashboard = new Button();
             textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            userName1 = new TextBox();
             lblNamaSiswa = new TextBox();
             button8 = new Button();
             lblNilaiRataRata = new TextBox();
@@ -194,17 +194,17 @@
             textBox1.Text = "Selamat Datang, ";
             textBox1.TextChanged += textBox1_TextChanged;
             // 
-            // textBox2
+            // userName1
             // 
-            textBox2.BackColor = SystemColors.Control;
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            textBox2.Location = new Point(238, 36);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 16);
-            textBox2.TabIndex = 2;
-            textBox2.Text = "User";
-            textBox2.TextChanged += textBox2_TextChanged;
+            userName1.BackColor = SystemColors.Control;
+            userName1.BorderStyle = BorderStyle.None;
+            userName1.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            userName1.Location = new Point(238, 36);
+            userName1.Name = "userName1";
+            userName1.Size = new Size(100, 16);
+            userName1.TabIndex = 2;
+            userName1.Text = "username";
+            userName1.TextChanged += textBox2_TextChanged;
             // 
             // lblNamaSiswa
             // 
@@ -246,6 +246,7 @@
             lblNilaiRataRata.Size = new Size(56, 41);
             lblNilaiRataRata.TabIndex = 9;
             lblNilaiRataRata.Text = "85,6";
+            lblNilaiRataRata.TextChanged += lblNilaiRataRata_TextChanged;
             // 
             // lblPoinSiswa
             // 
@@ -312,6 +313,7 @@
             pictureBox1.Size = new Size(30, 30);
             pictureBox1.TabIndex = 16;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // lblKelasSiswa
             // 
@@ -453,7 +455,7 @@
             Controls.Add(lblNilaiRataRata);
             Controls.Add(button8);
             Controls.Add(lblNamaSiswa);
-            Controls.Add(textBox2);
+            Controls.Add(userName1);
             Controls.Add(textBox1);
             Controls.Add(panel1);
             Controls.Add(lblKelasSiswa);
@@ -488,7 +490,7 @@
         private Button btnMenuNilai;
         private Button btnMenuJadwal;
         private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox userName1;
         private TextBox lblNamaSiswa;
         private PictureBox pictureBox2;
         private Button button8;

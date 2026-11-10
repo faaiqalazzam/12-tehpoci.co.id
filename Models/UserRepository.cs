@@ -30,7 +30,9 @@ namespace Project_KLP_12.Models
                                 Id = reader.GetInt32("id"),
                                 Name = reader.GetString("name"),
                                 Email = reader.GetString("email"),
-                                Role = reader.GetString("role")
+                                Role = reader.GetString("role"),
+                                Jiwa = reader.GetInt32("jiwa"),
+                                Kelas = reader.GetString("kelas")
                             };
                         }
                     }
