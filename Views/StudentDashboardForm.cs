@@ -20,7 +20,17 @@ namespace Project_KLP_12
             lblNamaSiswa.Text = user.Name;
             lblKelasSiswa.Text = user.Kelas;
             lblPoinSiswa.Text = user.Jiwa.ToString();
+            LoadJadwal();
 
+        }
+
+        public void LoadJadwal()
+        {
+            listBoxJadwal.Items.Clear();
+            listBoxJadwal.Items.Add("07:15 - 09:30 | Pemrograman Web & Perangkat Bergerak");
+            listBoxJadwal.Items.Add("09:45 - 11:30 | Pemrograman Berorientasi Objek");
+            listBoxJadwal.Items.Add("12:30 - 14:00 | Basis Data");
+            listBoxJadwal.Items.Add("14:00 - 15:30 | PKK");
         }
 
         public StudentDashboardForm(UserModel user)
@@ -39,6 +49,9 @@ namespace Project_KLP_12
 
         private void button5_Click(object sender, EventArgs e)
         {
+            Form1 form = new Form1();
+            form.Show();
+            this.Hide();
 
         }
 
@@ -84,6 +97,26 @@ namespace Project_KLP_12
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel7_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
