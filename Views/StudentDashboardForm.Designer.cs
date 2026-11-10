@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentDashboardForm));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -38,11 +39,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentDashboardForm));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            pictureBox3 = new PictureBox();
+            button3 = new Button();
+            button2 = new Button();
+            button1 = new Button();
             btnLogout = new Button();
             userName1 = new TextBox();
-            lblNilaiRataRata = new TextBox();
+            lbPelanggaran = new TextBox();
             lblPoinSiswa = new TextBox();
             lblPersenKehadiran = new TextBox();
             listBoxJadwal = new ListBox();
@@ -63,14 +69,13 @@
             pictureBox1 = new PictureBox();
             lblKelasSiswa = new TextBox();
             lblNamaSiswa = new TextBox();
-            pictureBox2 = new PictureBox();
             textBox1 = new TextBox();
             textBox2 = new TextBox();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            pictureBox3 = new PictureBox();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            pictureBox2 = new PictureBox();
+            button4 = new Button();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             guna2Panel1.SuspendLayout();
             guna2Panel2.SuspendLayout();
             guna2Panel3.SuspendLayout();
@@ -78,7 +83,6 @@
             guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -94,6 +98,56 @@
             panel1.Size = new Size(42, 453);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
+            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox3.Location = new Point(8, 24);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(20, 20);
+            pictureBox3.TabIndex = 34;
+            pictureBox3.TabStop = false;
+            // 
+            // button3
+            // 
+            button3.BackColor = SystemColors.ControlLightLight;
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
+            button3.BackgroundImageLayout = ImageLayout.Stretch;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.ForeColor = SystemColors.ControlLightLight;
+            button3.Location = new Point(8, 168);
+            button3.Name = "button3";
+            button3.Size = new Size(20, 24);
+            button3.TabIndex = 36;
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.BackColor = SystemColors.ControlLightLight;
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Stretch;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.ControlLightLight;
+            button2.Location = new Point(8, 120);
+            button2.Name = "button2";
+            button2.Size = new Size(20, 20);
+            button2.TabIndex = 35;
+            button2.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.ControlLightLight;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Stretch;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Location = new Point(8, 72);
+            button1.Name = "button1";
+            button1.Size = new Size(20, 20);
+            button1.TabIndex = 34;
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnLogout
             // 
@@ -117,26 +171,26 @@
             userName1.BorderStyle = BorderStyle.None;
             userName1.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold);
             userName1.ForeColor = Color.Maroon;
-            userName1.Location = new Point(184, 8);
+            userName1.Location = new Point(184, 16);
             userName1.Name = "userName1";
             userName1.Size = new Size(181, 16);
             userName1.TabIndex = 2;
             userName1.Text = "username";
             userName1.TextChanged += textBox2_TextChanged;
             // 
-            // lblNilaiRataRata
+            // lbPelanggaran
             // 
-            lblNilaiRataRata.BackColor = Color.White;
-            lblNilaiRataRata.BorderStyle = BorderStyle.None;
-            lblNilaiRataRata.Font = new Font("Yu Gothic", 18.75F, FontStyle.Bold);
-            lblNilaiRataRata.ForeColor = SystemColors.ControlText;
-            lblNilaiRataRata.Location = new Point(8, 35);
-            lblNilaiRataRata.Name = "lblNilaiRataRata";
-            lblNilaiRataRata.ReadOnly = true;
-            lblNilaiRataRata.Size = new Size(56, 41);
-            lblNilaiRataRata.TabIndex = 9;
-            lblNilaiRataRata.Text = "0";
-            lblNilaiRataRata.TextChanged += lblNilaiRataRata_TextChanged;
+            lbPelanggaran.BackColor = Color.White;
+            lbPelanggaran.BorderStyle = BorderStyle.None;
+            lbPelanggaran.Font = new Font("Yu Gothic", 18.75F, FontStyle.Bold);
+            lbPelanggaran.ForeColor = SystemColors.ControlText;
+            lbPelanggaran.Location = new Point(8, 35);
+            lbPelanggaran.Name = "lbPelanggaran";
+            lbPelanggaran.ReadOnly = true;
+            lbPelanggaran.Size = new Size(56, 41);
+            lbPelanggaran.TabIndex = 9;
+            lbPelanggaran.Text = "0";
+            lbPelanggaran.TextChanged += lblNilaiRataRata_TextChanged;
             // 
             // lblPoinSiswa
             // 
@@ -144,7 +198,7 @@
             lblPoinSiswa.BorderStyle = BorderStyle.None;
             lblPoinSiswa.Font = new Font("Yu Gothic", 18.75F, FontStyle.Bold);
             lblPoinSiswa.ForeColor = SystemColors.ControlText;
-            lblPoinSiswa.Location = new Point(8, 34);
+            lblPoinSiswa.Location = new Point(16, 32);
             lblPoinSiswa.Name = "lblPoinSiswa";
             lblPoinSiswa.ReadOnly = true;
             lblPoinSiswa.Size = new Size(56, 41);
@@ -172,13 +226,13 @@
             listBoxJadwal.Items.AddRange(new object[] { "" });
             listBoxJadwal.Location = new Point(11, 30);
             listBoxJadwal.Name = "listBoxJadwal";
-            listBoxJadwal.Size = new Size(485, 90);
+            listBoxJadwal.Size = new Size(461, 72);
             listBoxJadwal.TabIndex = 23;
             // 
             // panel7
             // 
             panel7.BackColor = Color.LimeGreen;
-            panel7.Location = new Point(444, 224);
+            panel7.Location = new Point(420, 224);
             panel7.Name = "panel7";
             panel7.Size = new Size(5, 75);
             panel7.TabIndex = 24;
@@ -187,7 +241,7 @@
             // panel8
             // 
             panel8.BackColor = Color.Gold;
-            panel8.Location = new Point(245, 226);
+            panel8.Location = new Point(256, 224);
             panel8.Name = "panel8";
             panel8.Size = new Size(5, 75);
             panel8.TabIndex = 25;
@@ -222,12 +276,12 @@
             guna2Panel1.BorderRadius = 30;
             guna2Panel1.BorderThickness = 20;
             guna2Panel1.Controls.Add(textBox4);
-            guna2Panel1.Controls.Add(lblNilaiRataRata);
+            guna2Panel1.Controls.Add(lbPelanggaran);
             guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Location = new Point(80, 224);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(151, 78);
+            guna2Panel1.Size = new Size(159, 78);
             guna2Panel1.TabIndex = 29;
             guna2Panel1.Paint += guna2Panel1_Paint;
             // 
@@ -253,10 +307,10 @@
             guna2Panel2.Controls.Add(textBox5);
             guna2Panel2.Controls.Add(lblPoinSiswa);
             guna2Panel2.CustomizableEdges = customizableEdges3;
-            guna2Panel2.Location = new Point(248, 224);
+            guna2Panel2.Location = new Point(256, 224);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel2.Size = new Size(176, 78);
+            guna2Panel2.Size = new Size(152, 78);
             guna2Panel2.TabIndex = 30;
             // 
             // textBox5
@@ -265,9 +319,9 @@
             textBox5.BorderStyle = BorderStyle.None;
             textBox5.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox5.ForeColor = SystemColors.WindowFrame;
-            textBox5.Location = new Point(8, 5);
+            textBox5.Location = new Point(16, 8);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(136, 16);
+            textBox5.Size = new Size(112, 16);
             textBox5.TabIndex = 25;
             textBox5.Text = "Jiwa";
             // 
@@ -281,11 +335,12 @@
             guna2Panel3.Controls.Add(textBox6);
             guna2Panel3.Controls.Add(lblPersenKehadiran);
             guna2Panel3.CustomizableEdges = customizableEdges5;
-            guna2Panel3.Location = new Point(448, 224);
+            guna2Panel3.Location = new Point(424, 224);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Panel3.Size = new Size(143, 78);
             guna2Panel3.TabIndex = 30;
+            guna2Panel3.Paint += guna2Panel3_Paint;
             // 
             // textBox6
             // 
@@ -301,17 +356,17 @@
             // 
             // guna2Panel4
             // 
-            guna2Panel4.BackColor = SystemColors.ButtonFace;
+            guna2Panel4.BackColor = SystemColors.InactiveBorder;
             guna2Panel4.BackgroundImage = (Image)resources.GetObject("guna2Panel4.BackgroundImage");
             guna2Panel4.BackgroundImageLayout = ImageLayout.Stretch;
             guna2Panel4.BorderRadius = 30;
             guna2Panel4.BorderThickness = 20;
             guna2Panel4.Controls.Add(textBox3);
             guna2Panel4.CustomizableEdges = customizableEdges7;
-            guna2Panel4.Location = new Point(619, 8);
+            guna2Panel4.Location = new Point(584, 16);
             guna2Panel4.Name = "guna2Panel4";
             guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel4.Size = new Size(169, 430);
+            guna2Panel4.Size = new Size(200, 424);
             guna2Panel4.TabIndex = 31;
             // 
             // textBox3
@@ -320,11 +375,12 @@
             textBox3.BorderStyle = BorderStyle.None;
             textBox3.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox3.ForeColor = SystemColors.WindowFrame;
-            textBox3.Location = new Point(22, 3);
+            textBox3.Location = new Point(16, 200);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(136, 16);
             textBox3.TabIndex = 23;
-            textBox3.Text = "Pemberitahuan";
+            textBox3.Text = "Agenda";
+            textBox3.TextChanged += textBox3_TextChanged_1;
             // 
             // guna2Panel5
             // 
@@ -339,7 +395,7 @@
             guna2Panel5.Location = new Point(77, 315);
             guna2Panel5.Name = "guna2Panel5";
             guna2Panel5.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel5.Size = new Size(515, 124);
+            guna2Panel5.Size = new Size(491, 124);
             guna2Panel5.TabIndex = 32;
             // 
             // textBox7
@@ -358,7 +414,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(560, 16);
+            pictureBox1.Location = new Point(536, 16);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 26);
             pictureBox1.TabIndex = 16;
@@ -369,11 +425,11 @@
             // 
             lblKelasSiswa.BackColor = SystemColors.Control;
             lblKelasSiswa.BorderStyle = BorderStyle.None;
-            lblKelasSiswa.Font = new Font("Trebuchet MS", 6.75F, FontStyle.Bold);
-            lblKelasSiswa.ForeColor = Color.Maroon;
-            lblKelasSiswa.Location = new Point(454, 31);
+            lblKelasSiswa.Font = new Font("Trebuchet MS", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblKelasSiswa.ForeColor = SystemColors.ControlDarkDark;
+            lblKelasSiswa.Location = new Point(430, 31);
             lblKelasSiswa.Name = "lblKelasSiswa";
-            lblKelasSiswa.Size = new Size(100, 11);
+            lblKelasSiswa.Size = new Size(100, 13);
             lblKelasSiswa.TabIndex = 17;
             lblKelasSiswa.Text = "XI RPL 2";
             lblKelasSiswa.TextAlign = HorizontalAlignment.Right;
@@ -384,7 +440,7 @@
             lblNamaSiswa.BackColor = SystemColors.Control;
             lblNamaSiswa.BorderStyle = BorderStyle.None;
             lblNamaSiswa.Font = new Font("Trebuchet MS", 8.75F, FontStyle.Bold);
-            lblNamaSiswa.Location = new Point(454, 17);
+            lblNamaSiswa.Location = new Point(430, 17);
             lblNamaSiswa.Name = "lblNamaSiswa";
             lblNamaSiswa.Size = new Size(100, 14);
             lblNamaSiswa.TabIndex = 3;
@@ -392,22 +448,12 @@
             lblNamaSiswa.TextAlign = HorizontalAlignment.Right;
             lblNamaSiswa.TextChanged += textBox3_TextChanged;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox2.Location = new Point(80, 56);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(512, 154);
-            pictureBox2.TabIndex = 33;
-            pictureBox2.TabStop = false;
-            // 
             // textBox1
             // 
             textBox1.BackColor = SystemColors.Control;
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Trebuchet MS", 9.75F, FontStyle.Bold);
-            textBox1.Location = new Point(81, 8);
+            textBox1.Location = new Point(81, 16);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(106, 16);
             textBox1.TabIndex = 1;
@@ -422,66 +468,57 @@
             textBox2.ForeColor = SystemColors.WindowFrame;
             textBox2.Location = new Point(81, 29);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(336, 14);
+            textBox2.Size = new Size(0, 14);
             textBox2.TabIndex = 18;
             textBox2.Text = "Ringkasan aktivitas dan jadwal pelajaran Anda hari ini.";
             // 
-            // button1
+            // guna2Button1
             // 
-            button1.BackColor = SystemColors.ControlLightLight;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.BackgroundImageLayout = ImageLayout.Stretch;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.ForeColor = SystemColors.ControlLightLight;
-            button1.Location = new Point(8, 72);
-            button1.Name = "button1";
-            button1.Size = new Size(20, 20);
-            button1.TabIndex = 34;
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            guna2Button1.CustomizableEdges = customizableEdges11;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(216, 56);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button1.Size = new Size(0, 0);
+            guna2Button1.TabIndex = 34;
+            guna2Button1.Text = "guna2Button1";
             // 
-            // button2
+            // pictureBox2
             // 
-            button2.BackColor = SystemColors.ControlLightLight;
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
-            button2.BackgroundImageLayout = ImageLayout.Stretch;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.ForeColor = SystemColors.ControlLightLight;
-            button2.Location = new Point(8, 120);
-            button2.Name = "button2";
-            button2.Size = new Size(20, 20);
-            button2.TabIndex = 35;
-            button2.UseVisualStyleBackColor = false;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox2.Location = new Point(80, 56);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(488, 154);
+            pictureBox2.TabIndex = 33;
+            pictureBox2.TabStop = false;
             // 
-            // button3
+            // button4
             // 
-            button3.BackColor = SystemColors.ControlLightLight;
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.BackgroundImageLayout = ImageLayout.Stretch;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.ForeColor = SystemColors.ControlLightLight;
-            button3.Location = new Point(8, 168);
-            button3.Name = "button3";
-            button3.Size = new Size(20, 20);
-            button3.TabIndex = 36;
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Location = new Point(0, 8);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(34, 41);
-            pictureBox3.TabIndex = 34;
-            pictureBox3.TabStop = false;
+            button4.BackColor = SystemColors.ControlLightLight;
+            button4.BackgroundImageLayout = ImageLayout.Stretch;
+            button4.FlatStyle = FlatStyle.Flat;
+            button4.ForeColor = SystemColors.ActiveCaptionText;
+            button4.Location = new Point(112, 160);
+            button4.Name = "button4";
+            button4.Size = new Size(88, 32);
+            button4.TabIndex = 37;
+            button4.Text = "➤ Cek Jiwa";
+            button4.UseVisualStyleBackColor = false;
             // 
             // StudentDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ButtonFace;
+            BackColor = SystemColors.InactiveBorder;
             ClientSize = new Size(800, 450);
+            Controls.Add(button4);
+            Controls.Add(guna2Button1);
             Controls.Add(lblNamaSiswa);
             Controls.Add(lblKelasSiswa);
             Controls.Add(textBox2);
@@ -502,6 +539,7 @@
             Text = "StudentDashboardForm";
             Load += StudentDashboardForm_Load;
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
             guna2Panel2.ResumeLayout(false);
@@ -514,7 +552,6 @@
             guna2Panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -524,7 +561,7 @@
         private Panel panel1;
         private Button btnLogout;
         private TextBox userName1;
-        private TextBox lblNilaiRataRata;
+        private TextBox lbPelanggaran;
         private TextBox lblPoinSiswa;
         private TextBox lblPersenKehadiran;
         private ListBox listBoxJadwal;
@@ -545,12 +582,14 @@
         private PictureBox pictureBox1;
         private TextBox lblKelasSiswa;
         private TextBox lblNamaSiswa;
-        private PictureBox pictureBox2;
         private TextBox textBox1;
         private TextBox textBox2;
         private Button button1;
         private Button button3;
         private Button button2;
         private PictureBox pictureBox3;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private PictureBox pictureBox2;
+        private Button button4;
     }
 }

@@ -20,6 +20,8 @@ namespace Project_KLP_12
             lblNamaSiswa.Text = user.Name;
             lblKelasSiswa.Text = user.Kelas;
             lblPoinSiswa.Text = user.Jiwa.ToString();
+            lbPelanggaran.Text = user.Pelanggaran.ToString();
+            lblPersenKehadiran.Text = user.Kehadiran.ToString() + "%";
             LoadJadwal();
 
         }
@@ -36,9 +38,7 @@ namespace Project_KLP_12
         public StudentDashboardForm(UserModel user)
         {
             InitializeComponent();
-
             currentUser = user;
-
             DisplayUserData(currentUser);
 
         }
@@ -117,6 +117,21 @@ namespace Project_KLP_12
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -9,5 +9,7 @@
         public string  Role { get; set; }
         public string Kelas { get; set; }
         public int Jiwa { get; set; }
+        public int Pelanggaran { get; set; }
+        public int Kehadiran { get; set; }
     }
 }   
