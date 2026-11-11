@@ -76,7 +76,7 @@
             lblNamaSiswa.BackColor = SystemColors.ButtonFace;
             lblNamaSiswa.BorderStyle = BorderStyle.None;
             lblNamaSiswa.Font = new Font("Trebuchet MS", 8.75F, FontStyle.Bold);
-            lblNamaSiswa.Location = new Point(434, 16);
+            lblNamaSiswa.Location = new Point(656, 25);
             lblNamaSiswa.Name = "lblNamaSiswa";
             lblNamaSiswa.ReadOnly = true;
             lblNamaSiswa.Size = new Size(82, 14);
@@ -90,7 +90,7 @@
             lblKelasSiswa.BorderStyle = BorderStyle.None;
             lblKelasSiswa.Font = new Font("Trebuchet MS", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblKelasSiswa.ForeColor = SystemColors.ControlDarkDark;
-            lblKelasSiswa.Location = new Point(434, 30);
+            lblKelasSiswa.Location = new Point(656, 39);
             lblKelasSiswa.Name = "lblKelasSiswa";
             lblKelasSiswa.ReadOnly = true;
             lblKelasSiswa.Size = new Size(82, 13);
@@ -114,7 +114,7 @@
             // 
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Location = new Point(522, 15);
+            pictureBox1.Location = new Point(744, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(32, 26);
             pictureBox1.TabIndex = 48;
@@ -174,7 +174,7 @@
             // flowLayoutPanelNilai
             // 
             flowLayoutPanelNilai.FlowDirection = FlowDirection.BottomUp;
-            flowLayoutPanelNilai.Location = new Point(56, 232);
+            flowLayoutPanelNilai.Location = new Point(56, 224);
             flowLayoutPanelNilai.Name = "flowLayoutPanelNilai";
             flowLayoutPanelNilai.Size = new Size(728, 216);
             flowLayoutPanelNilai.TabIndex = 51;

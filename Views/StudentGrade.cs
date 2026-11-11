@@ -14,7 +14,7 @@ namespace Project_KLP_12.Views
         private UserModel currentUser;
         private UserRepository userRepository = new UserRepository();
 
-        // Konstruktor menerima data user yang sedang login
+ 
         public StudentGrade(UserModel user)
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace Project_KLP_12.Views
         public StudentGrade()
         {
             InitializeComponent();
+            LoadNilaiCards();
         }
 
         private void LoadNilaiCards()
@@ -49,7 +50,7 @@ namespace Project_KLP_12.Views
 
         private void AddNilaiCard(string mapel, string score, string ket)
         {
-            // 1. Buat Panel Utama untuk Card Nilai
+
             Panel card = new Panel();
             card.Size = new Size(500, 70); // Sesuaikan ukuran lebar & tinggi card
             card.BackColor = Color.White;
