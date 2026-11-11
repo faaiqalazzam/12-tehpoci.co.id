@@ -100,6 +100,7 @@
             pictureBox1.Size = new Size(783, 450);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // panel1
             // 
@@ -143,6 +144,7 @@
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).EndInit();

@@ -1,7 +1,17 @@
-﻿namespace Project_KLP_12
+﻿using Project_KLP_12.Models;
+
+namespace Project_KLP_12
 {
-    partial class TeacherDashboardForm
+    partial class TeacherDashboardForm : Form
     {
+        private UserModel currentUser; // Variabel global untuk menyimpan data guru yang login
+
+        // Tambahkan constructor ini
+        public TeacherDashboardForm(UserModel user)
+        {
+            InitializeComponent();
+            currentUser = user;
+        }
         /// <summary>
         /// Required designer variable.
         /// </summary>

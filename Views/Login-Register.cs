@@ -55,16 +55,21 @@ namespace Project_KLP_12
             UserRepository repo = new UserRepository();
             UserModel user = repo.Authenticate(txtEmail.Text, txtPassword.Text, cmbRole.Text);
 
-            if (user != null)
+            if (cmbRole.Text == "Siswa")
             {
                 StudentDashboardForm dashboard = new StudentDashboardForm(user);
                 dashboard.Show();
                 this.Hide();
             }
-            else
+            if (cmbRole.Text == "Guru")
             {
-                MessageBox.Show("Login gagal, cek kembali email/password/role!");
+                TeacherDashboardForm dashboard = new TeacherDashboardForm(user);
+                dashboard.Show();
+                this.Hide();
             }
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -84,5 +89,12 @@ namespace Project_KLP_12
         {
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
     }
 }

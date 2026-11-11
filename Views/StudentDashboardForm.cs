@@ -1,5 +1,6 @@
 ﻿using Project_KLP_12.Models;
 using Project_KLP_12.Presenters;
+using Project_KLP_12.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,23 +17,22 @@ namespace Project_KLP_12
         private UserModel currentUser;
         public void DisplayUserData(UserModel user)
         {
-            userName1.Text = user.Name;
+
             lblNamaSiswa.Text = user.Name;
             lblKelasSiswa.Text = user.Kelas;
-            lblPoinSiswa.Text = user.Jiwa.ToString();
-            lbPelanggaran.Text = user.Pelanggaran.ToString();
-            lblPersenKehadiran.Text = user.Kehadiran.ToString() + "%";
+            lbPoinJiwa.Text = user.Jiwa.ToString();
+            lbPelanggaran1.Text = user.Pelanggaran.ToString();
+            lbKehadiran.Text = user.Kehadiran.ToString() + "%";
             LoadJadwal();
 
         }
 
         public void LoadJadwal()
         {
-            listBoxJadwal.Items.Clear();
-            listBoxJadwal.Items.Add("07:15 - 09:30 | Pemrograman Web & Perangkat Bergerak");
-            listBoxJadwal.Items.Add("09:45 - 11:30 | Pemrograman Berorientasi Objek");
-            listBoxJadwal.Items.Add("12:30 - 14:00 | Basis Data");
-            listBoxJadwal.Items.Add("14:00 - 15:30 | PKK");
+            AddJadwalCard("07:15 - 09:30", "Pemrograman Web & Perangkat Bergerak");
+            AddJadwalCard("09:45 - 11:30", "Pemrograman Berorientasi Objek");
+            AddJadwalCard("12:30 - 14:00", "Basis Data");
+            AddJadwalCard("14:00 - 15:30", "PKK");
         }
 
         public StudentDashboardForm(UserModel user)
@@ -132,6 +132,72 @@ namespace Project_KLP_12
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+        private void AddJadwalCard(string jam, string mapel)
+        {
+
+            Panel card = new Panel();
+            card.Size = new Size(300, 30);
+            card.BackColor = Color.WhiteSmoke;
+
+            Label lblJam = new Label();
+            lblJam.Text = jam;
+            lblJam.BackColor = Color.FromArgb(139, 0, 0);
+            lblJam.ForeColor = Color.White;
+            lblJam.Font = new Font("Segoe UI", 6, FontStyle.Bold);
+            lblJam.TextAlign = ContentAlignment.MiddleCenter;
+            lblJam.Size = new Size(115, 30);
+            lblJam.Location = new Point(5, 5);
+
+            Label lblMapel = new Label();
+            lblMapel.Text = mapel;
+            lblMapel.ForeColor = Color.Black;
+            lblMapel.Font = new Font("Segoe UI", 6, FontStyle.Regular);
+            lblMapel.AutoSize = true;
+            lblMapel.Location = new Point(130, 15);
+
+
+            card.Controls.Add(lblJam);
+            card.Controls.Add(lblMapel);
+
+            FlowLayoutPanelJadwal.Controls.Add(card);
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            StudentGrade nilai = new StudentGrade();
+            nilai.Show();
+            this.Hide();
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel10_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbPoinJiwa_TextChanged(object sender, EventArgs e)
         {
 
         }
