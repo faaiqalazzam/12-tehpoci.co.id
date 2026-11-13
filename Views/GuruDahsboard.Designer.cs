@@ -365,6 +365,7 @@
             FlowLayoutPanelJadwal.Size = new Size(472, 96);
             FlowLayoutPanelJadwal.TabIndex = 41;
             FlowLayoutPanelJadwal.WrapContents = false;
+            FlowLayoutPanelJadwal.Paint += FlowLayoutPanelJadwal_Paint;
             // 
             // textBox12
             // 
@@ -600,6 +601,7 @@
             pictureBox2.Size = new Size(488, 154);
             pictureBox2.TabIndex = 62;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // panel1
             // 
@@ -637,6 +639,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
             Name = "GuruDahsboard";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "GuruDahsboard";
             Load += GuruDahsboard_Load;
             panel5.ResumeLayout(false);

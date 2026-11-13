@@ -63,6 +63,7 @@
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(227, 23);
             txtEmail.TabIndex = 1;
+            txtEmail.Text = "oktai@sekolah.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
@@ -72,6 +73,7 @@
             txtPassword.PlaceholderText = "Password";
             txtPassword.Size = new Size(227, 23);
             txtPassword.TabIndex = 2;
+            txtPassword.Text = "12345";
             txtPassword.UseSystemPasswordChar = true;
             txtPassword.TextChanged += txtPassword_TextChanged;
             // 

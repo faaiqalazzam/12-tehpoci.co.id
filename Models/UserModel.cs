@@ -1,4 +1,6 @@
-﻿namespace Project_KLP_12.Models
+﻿using System.Configuration;
+
+namespace Project_KLP_12.Models
 {
     public class UserModel
     {
@@ -11,5 +13,9 @@
         public int Jiwa { get; set; }
         public int Pelanggaran { get; set; }
         public int Kehadiran { get; set; }
+
+        public string SubjectName { get; set; }
+        public int Teacher_Id { get; set; }
+        public string ClassName { get; set; }
     }
 }   

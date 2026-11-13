@@ -13,7 +13,7 @@ namespace Project_KLP_12
         {
             InitializeComponent();
 
-            cmbRole.SelectedItem = "Siswa";
+            cmbRole.SelectedItem = "Guru";
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -63,8 +63,8 @@ namespace Project_KLP_12
             }
             if (cmbRole.Text == "Guru")
             {
-                TeacherDashboardForm dashboard = new TeacherDashboardForm(user);
-                dashboard.Show();
+                GuruDahsboard dashboards = new GuruDahsboard(user);
+                dashboards.Show();
                 this.Hide();
             }
 

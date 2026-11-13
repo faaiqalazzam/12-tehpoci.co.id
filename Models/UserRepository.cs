@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Project_KLP_12.Models
 {
@@ -53,34 +54,55 @@ namespace Project_KLP_12.Models
             }
             return user;
         }
-
-        public DataTable GetNilaiSiswa(int userId)
-        {
-            DataTable dt = new DataTable();
+        public List<UserModel> GetSchedules(int teacher_id, string class_name, string role) 
+        { 
+            List<UserModel> ListJadwal = new List<UserModel>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                string query = @"
-            SELECT 
-                sub.name AS 'Mata Pelajaran',
-                g.score AS 'Nilai',
-                g.description AS 'Keterangan'
-            FROM grades g
-            JOIN students s ON g.student_id = s.id
-            JOIN teacher_subjects ts ON g.teacher_subject_id = ts.id
-            JOIN subjects sub ON ts.subject_id = sub.id
-            WHERE s.user_id = @userId";
+
+                string query = role == "Siswa" ? 
+                                     @"SELECT s.subject_name, t.name AS teacher_name, ts.class_name
+                                        FROM teacher_subject ts
+                                        JOIN subjects s ON ts.subject_id = s.id
+                                        JOIN teacher t ON ts.teacher_id = t.id
+                                        JOIN users u ON t.user_id
+                                        WHERE ts.class_name = @class_name" :
+                                        @"SELECT s.subject_name, t.name AS teacher_name, ts.class_name
+                                        FROM teacher_subject ts
+                                        JOIN subjects s ON ts.subject_id = s.id
+                                        JOIN teachers t ON ts.teacher_id = t.id
+                                        JOIN users u ON t.user_id
+                                        WHERE ts.teacher_id = @teacherId";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@userId", userId);
-                    using (MySqlDataAdapter adapter = new MySqlDataAdapter(cmd))
+                    if (role == "Siswa")
                     {
-                        adapter.Fill(dt);
+                        cmd.Parameters.AddWithValue("@class_name", class_name);
+                    }
+                    if (role == "Guru")
+                    {
+                        cmd.Parameters.AddWithValue("@teacherId", teacher_id);
+                    }
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read()){
+                            ListJadwal.Add(new UserModel
+                            {
+                                SubjectName = reader["subject_name"] != DBNull.Value ? reader.GetString("subject_name") : "-",
+                                Teacher_Id = reader["teacher_id"] != DBNull.Value ? reader.GetInt32("teacher_name") : 0,
+                                ClassName = reader["class_name"] != DBNull.Value ? reader.GetString("subject_name") : "-"
+                            });
+                        }
                     }
                 }
+
             }
-            return dt;
+
+            
+
+            return ListJadwal;
         }
-    }
+    };
 }

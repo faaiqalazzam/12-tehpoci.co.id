@@ -34,6 +34,31 @@ namespace Project_KLP_12
             AddJadwalCard("12:30 - 14:00", "Basis Data");
             AddJadwalCard("14:00 - 15:30", "PKK");
         }
+        
+        public void LoadJadwalDashboard(UserModel user)
+        {
+            UserRepository repo = new UserRepository();
+            string roleLogin = user.Role;
+            string kelasSiswa = user.ClassName;
+            int teacherId = user.Teacher_Id;
+
+            List<UserModel> daftarJadwal = new List<UserModel>();
+            foreach (var item in daftarJadwal)
+            {
+                Panel card = new Panel();
+                card.Size =  new Size(300, 30);
+                card.BackColor = Color.White;
+
+                Label lblsubject = new Label();
+                lblsubject.Text = item.SubjectName;
+                lblsubject.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+
+                Label lblDetail = new Label();
+                lblDetail.Text = roleLogin == "Siswa" ? "Guru" + item.Teacher_Id : "Kelas : " + item.ClassName;
+                lblDetail.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+                lblDetail.ForeColor = Color.White;
+            }
+        }
 
         public StudentDashboardForm(UserModel user)
         {
@@ -198,6 +223,11 @@ namespace Project_KLP_12
         }
 
         private void lbPoinJiwa_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
         }
