@@ -54,26 +54,27 @@ namespace Project_KLP_12.Models
             }
             return user;
         }
-        public List<UserModel> GetSchedules(int teacher_id, string class_name, string role) 
-        { 
-            List<UserModel> ListJadwal = new List<UserModel>();
+
+        public List<UserModel> GetSchedules(int teacherId, string role, string class_name)
+        {
+            List<UserModel> UserJadwal = new List<UserModel>();
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
+                string query = role == "Siswa" ?
+              @"SELECT subjects.subject_name, teachers.name AS teacher_name, classes.class_name
+              FROM teacher_subjects
+              JOIN subjects ON teacher_subjects.subject_id = subjects.id
+              JOIN teachers ON teacher_subjects.teacher_id = teachers.id
+              JOIN classes ON teacher_subjects.class_id = classes.id
+              WHERE classes.class_name = @class_name" :
 
-                string query = role == "Siswa" ? 
-                                     @"SELECT s.subject_name, t.name AS teacher_name, ts.class_name
-                                        FROM teacher_subject ts
-                                        JOIN subjects s ON ts.subject_id = s.id
-                                        JOIN teacher t ON ts.teacher_id = t.id
-                                        JOIN users u ON t.user_id
-                                        WHERE ts.class_name = @class_name" :
-                                        @"SELECT s.subject_name, t.name AS teacher_name, ts.class_name
-                                        FROM teacher_subject ts
-                                        JOIN subjects s ON ts.subject_id = s.id
-                                        JOIN teachers t ON ts.teacher_id = t.id
-                                        JOIN users u ON t.user_id
-                                        WHERE ts.teacher_id = @teacherId";
+              @"SELECT subjects.subject_name, teachers.name AS teacher_name, classes.class_name
+              FROM teacher_subjects
+              JOIN subjects ON teacher_subjects.subject_id = subjects.id
+              JOIN teachers ON teacher_subjects.teacher_id = teachers.id
+              JOIN classes ON teacher_subjects.class_id = classes.id
+              WHERE teacher_subjects.teacher_id = @teacherId";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
@@ -81,28 +82,31 @@ namespace Project_KLP_12.Models
                     {
                         cmd.Parameters.AddWithValue("@class_name", class_name);
                     }
-                    if (role == "Guru")
+                    else if (role == "Guru")
                     {
-                        cmd.Parameters.AddWithValue("@teacherId", teacher_id);
+                        cmd.Parameters.AddWithValue("@teacherId", teacherId);
                     }
+
                     using (MySqlDataReader reader = cmd.ExecuteReader())
                     {
-                        while (reader.Read()){
-                            ListJadwal.Add(new UserModel
+                        while (reader.Read())
+                        {
+                            UserJadwal.Add(new UserModel
                             {
                                 SubjectName = reader["subject_name"] != DBNull.Value ? reader.GetString("subject_name") : "-",
-                                Teacher_Id = reader["teacher_id"] != DBNull.Value ? reader.GetInt32("teacher_name") : 0,
-                                ClassName = reader["class_name"] != DBNull.Value ? reader.GetString("subject_name") : "-"
+                                TeacherName = reader["teacher_name"] != DBNull.Value ? reader.GetString("teacher_name") : "-",
+                                ClassName = reader["class_name"] != DBNull.Value ? reader.GetString("class_name") : "-"
+
                             });
                         }
                     }
+
+
                 }
 
-            }
 
-            
+            } return UserJadwal;
 
-            return ListJadwal;
-        }
-    };
+        } 
+    } 
 }

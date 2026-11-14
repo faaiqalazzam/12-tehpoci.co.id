@@ -63,7 +63,7 @@
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(227, 23);
             txtEmail.TabIndex = 1;
-            txtEmail.Text = "oktai@sekolah.com";
+            txtEmail.Text = "budi@sekolah.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword
@@ -87,6 +87,7 @@
             cmbRole.Name = "cmbRole";
             cmbRole.Size = new Size(227, 23);
             cmbRole.TabIndex = 3;
+            cmbRole.SelectedIndexChanged += cmbRole_SelectedIndexChanged;
             // 
             // userRepositoryBindingSource
             // 

@@ -13,7 +13,7 @@ namespace Project_KLP_12
         {
             InitializeComponent();
 
-            cmbRole.SelectedItem = "Guru";
+            cmbRole.SelectedItem = "Siswa";
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -96,5 +96,9 @@ namespace Project_KLP_12
 
         }
 
+        private void cmbRole_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

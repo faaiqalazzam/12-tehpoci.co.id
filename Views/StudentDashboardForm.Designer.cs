@@ -77,11 +77,11 @@
             textBox11 = new TextBox();
             panel11 = new Panel();
             panel10 = new Panel();
-            FlowLayoutPanelJadwal = new FlowLayoutPanel();
             textBox12 = new TextBox();
             button5 = new Button();
             button6 = new Button();
             panel12 = new Panel();
+            dataGridViewJadwal = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel7.SuspendLayout();
@@ -95,6 +95,7 @@
             panel13.SuspendLayout();
             panel14.SuspendLayout();
             panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewJadwal).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -676,25 +677,13 @@
             // 
             panel10.BackgroundImage = (Image)resources.GetObject("panel10.BackgroundImage");
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
-            panel10.Controls.Add(FlowLayoutPanelJadwal);
+            panel10.Controls.Add(dataGridViewJadwal);
             panel10.Controls.Add(textBox12);
             panel10.Location = new Point(64, 304);
             panel10.Name = "panel10";
             panel10.Size = new Size(488, 136);
             panel10.TabIndex = 42;
             panel10.Paint += panel10_Paint;
-            // 
-            // FlowLayoutPanelJadwal
-            // 
-            FlowLayoutPanelJadwal.AutoScroll = true;
-            FlowLayoutPanelJadwal.BackColor = SystemColors.InactiveBorder;
-            FlowLayoutPanelJadwal.FlowDirection = FlowDirection.TopDown;
-            FlowLayoutPanelJadwal.Location = new Point(8, 32);
-            FlowLayoutPanelJadwal.Name = "FlowLayoutPanelJadwal";
-            FlowLayoutPanelJadwal.Size = new Size(472, 96);
-            FlowLayoutPanelJadwal.TabIndex = 41;
-            FlowLayoutPanelJadwal.WrapContents = false;
-            FlowLayoutPanelJadwal.Paint += flowLayoutPanel1_Paint;
             // 
             // textBox12
             // 
@@ -748,6 +737,15 @@
             panel12.Size = new Size(3, 32);
             panel12.TabIndex = 45;
             // 
+            // dataGridViewJadwal
+            // 
+            dataGridViewJadwal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewJadwal.Location = new Point(8, 32);
+            dataGridViewJadwal.Name = "dataGridViewJadwal";
+            dataGridViewJadwal.Size = new Size(472, 96);
+            dataGridViewJadwal.TabIndex = 41;
+            dataGridViewJadwal.CellContentClick += dataGridViewJadwal_CellContentClick;
+            // 
             // StudentDashboardForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -795,6 +793,7 @@
             panel14.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewJadwal).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -842,7 +841,6 @@
         private Panel panel10;
         private TextBox textBox12;
         private Panel panel11;
-        private FlowLayoutPanel FlowLayoutPanelJadwal;
         private TextBox textBox11;
         private Button button5;
         private Button button6;
@@ -857,5 +855,6 @@
         private TextBox textBox15;
         private TextBox textBox16;
         private TextBox textBox17;
+        private DataGridView dataGridViewJadwal;
     }
 }

@@ -17,48 +17,59 @@ namespace Project_KLP_12
         private UserModel currentUser;
         public void DisplayUserData(UserModel user)
         {
+            LoadJadwal(user);
 
             lblNamaSiswa.Text = user.Name;
             lblKelasSiswa.Text = user.Kelas;
             lbPoinJiwa.Text = user.Jiwa.ToString();
             lbPelanggaran1.Text = user.Pelanggaran.ToString();
             lbKehadiran.Text = user.Kehadiran.ToString() + "%";
-            LoadJadwal();
 
+            ;
         }
 
-        public void LoadJadwal()
-        {
-            AddJadwalCard("07:15 - 09:30", "Pemrograman Web & Perangkat Bergerak");
-            AddJadwalCard("09:45 - 11:30", "Pemrograman Berorientasi Objek");
-            AddJadwalCard("12:30 - 14:00", "Basis Data");
-            AddJadwalCard("14:00 - 15:30", "PKK");
-        }
-        
-        public void LoadJadwalDashboard(UserModel user)
+        public void LoadJadwal(UserModel user)
         {
             UserRepository repo = new UserRepository();
-            string roleLogin = user.Role;
-            string kelasSiswa = user.ClassName;
-            int teacherId = user.Teacher_Id;
 
-            List<UserModel> daftarJadwal = new List<UserModel>();
-            foreach (var item in daftarJadwal)
+            List<UserModel> Jadwal = repo.GetSchedules(user.Id, user.Role, user.Kelas);
+
+            dataGridViewJadwal.Columns.Clear();
+            dataGridViewJadwal.AutoGenerateColumns = false;
+
+            dataGridViewJadwal.Columns.Add(new DataGridViewTextBoxColumn()
             {
-                Panel card = new Panel();
-                card.Size =  new Size(300, 30);
-                card.BackColor = Color.White;
+                Name = "SubjectName",
+                HeaderText = "Mata Pelajaran",
+                DataPropertyName = "SubjectName",
+                Width = 220
+            });
 
-                Label lblsubject = new Label();
-                lblsubject.Text = item.SubjectName;
-                lblsubject.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-
-                Label lblDetail = new Label();
-                lblDetail.Text = roleLogin == "Siswa" ? "Guru" + item.Teacher_Id : "Kelas : " + item.ClassName;
-                lblDetail.Font = new Font("Segoe UI", 12, FontStyle.Bold);
-                lblDetail.ForeColor = Color.White;
+            if (user.Role == "Siswa")
+            {
+                dataGridViewJadwal.Columns.Add(new DataGridViewTextBoxColumn()
+                {
+                    Name = "TeacherName",
+                    HeaderText = "Guru",
+                    DataPropertyName = "TeacherName",
+                    Width = 200
+                });
             }
+            else
+            {
+                dataGridViewJadwal.Columns.Add(new DataGridViewTextBoxColumn()
+                {
+                    Name = "ClassName",
+                    HeaderText = "Keleas",
+                    DataPropertyName = "ClassName",
+                    Width = 200
+                });
+            }
+            dataGridViewJadwal.DataSource = Jadwal;
         }
+
+
+
 
         public StudentDashboardForm(UserModel user)
         {
@@ -170,35 +181,6 @@ namespace Project_KLP_12
         {
 
         }
-        private void AddJadwalCard(string jam, string mapel)
-        {
-
-            Panel card = new Panel();
-            card.Size = new Size(300, 30);
-            card.BackColor = Color.WhiteSmoke;
-
-            Label lblJam = new Label();
-            lblJam.Text = jam;
-            lblJam.BackColor = Color.FromArgb(139, 0, 0);
-            lblJam.ForeColor = Color.White;
-            lblJam.Font = new Font("Segoe UI", 6, FontStyle.Bold);
-            lblJam.TextAlign = ContentAlignment.MiddleCenter;
-            lblJam.Size = new Size(115, 30);
-            lblJam.Location = new Point(5, 5);
-
-            Label lblMapel = new Label();
-            lblMapel.Text = mapel;
-            lblMapel.ForeColor = Color.Black;
-            lblMapel.Font = new Font("Segoe UI", 6, FontStyle.Regular);
-            lblMapel.AutoSize = true;
-            lblMapel.Location = new Point(130, 15);
-
-
-            card.Controls.Add(lblJam);
-            card.Controls.Add(lblMapel);
-
-            FlowLayoutPanelJadwal.Controls.Add(card);
-        }
 
         private void button5_Click_1(object sender, EventArgs e)
         {
@@ -228,6 +210,11 @@ namespace Project_KLP_12
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridViewJadwal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

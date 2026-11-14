@@ -15,7 +15,10 @@ namespace Project_KLP_12.Models
         public int Kehadiran { get; set; }
 
         public string SubjectName { get; set; }
-        public int Teacher_Id { get; set; }
+        public string TeacherName { get; set;  }
         public string ClassName { get; set; }
+
+
+
     }
 }   

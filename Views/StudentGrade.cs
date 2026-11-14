@@ -19,34 +19,34 @@ namespace Project_KLP_12.Views
         {
             InitializeComponent();
             currentUser = user;
-            LoadNilaiCards();
+           
         }
 
         public StudentGrade()
         {
             InitializeComponent();
-            LoadNilaiCards();
+            
         }
 
-        private void LoadNilaiCards()
-        {
-            if (currentUser != null)
-            {
+        //private void LoadNilaiCards()
+        //{
+        //    if (currentUser != null)
+        //    {
  
-                DataTable dt = userRepository.GetNilaiSiswa(currentUser.Id);
+        //        DataTable dt = userRepository.GetNilaiSiswa(currentUser.Id);
 
 
-                foreach (DataRow row in dt.Rows)
-                {
-                    string mataPelajaran = row["Mata Pelajaran"].ToString();
-                    string nilai = row["Nilai"].ToString();
-                    string keterangan = row["Keterangan"].ToString();
+        //        foreach (DataRow row in dt.Rows)
+        //        {
+        //            string mataPelajaran = row["Mata Pelajaran"].ToString();
+        //            string nilai = row["Nilai"].ToString();
+        //            string keterangan = row["Keterangan"].ToString();
 
 
-                    AddNilaiCard(mataPelajaran, nilai, keterangan);
-                }
-            }
-        }
+        //            AddNilaiCard(mataPelajaran, nilai, keterangan);
+        //        }
+        //    }
+        //}
 
         private void AddNilaiCard(string mapel, string score, string ket)
         {
