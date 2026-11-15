@@ -39,10 +39,11 @@
             pictureBox3 = new PictureBox();
             button1 = new Button();
             btnLogout = new Button();
-            flowLayoutPanelNilai = new FlowLayoutPanel();
+            dataGridViewNilai = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewNilai).BeginInit();
             SuspendLayout();
             // 
             // button3
@@ -171,22 +172,21 @@
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = true;
             // 
-            // flowLayoutPanelNilai
+            // dataGridViewNilai
             // 
-            flowLayoutPanelNilai.FlowDirection = FlowDirection.BottomUp;
-            flowLayoutPanelNilai.Location = new Point(56, 224);
-            flowLayoutPanelNilai.Name = "flowLayoutPanelNilai";
-            flowLayoutPanelNilai.Size = new Size(728, 216);
-            flowLayoutPanelNilai.TabIndex = 51;
-            flowLayoutPanelNilai.WrapContents = false;
-            flowLayoutPanelNilai.Paint += flowLayoutPanelNilai_Paint;
+            dataGridViewNilai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewNilai.Location = new Point(80, 192);
+            dataGridViewNilai.Name = "dataGridViewNilai";
+            dataGridViewNilai.Size = new Size(672, 216);
+            dataGridViewNilai.TabIndex = 51;
+            dataGridViewNilai.CellContentClick += dataGridViewNilai_CellContentClick;
             // 
             // StudentGrade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(flowLayoutPanelNilai);
+            Controls.Add(dataGridViewNilai);
             Controls.Add(lblNamaSiswa);
             Controls.Add(lblKelasSiswa);
             Controls.Add(textBox2);
@@ -198,6 +198,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewNilai).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -213,6 +214,6 @@
         private PictureBox pictureBox3;
         private Button button1;
         private Button btnLogout;
-        private FlowLayoutPanel flowLayoutPanelNilai;
+        private DataGridView dataGridViewNilai;
     }
 }

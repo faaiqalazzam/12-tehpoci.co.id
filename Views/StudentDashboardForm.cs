@@ -60,7 +60,7 @@ namespace Project_KLP_12
                 dataGridViewJadwal.Columns.Add(new DataGridViewTextBoxColumn()
                 {
                     Name = "ClassName",
-                    HeaderText = "Keleas",
+                    HeaderText = "Kelas",
                     DataPropertyName = "ClassName",
                     Width = 200
                 });
@@ -189,7 +189,7 @@ namespace Project_KLP_12
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StudentGrade nilai = new StudentGrade();
+            StudentGrade nilai = new StudentGrade(currentUser);
             nilai.Show();
             this.Hide();
         }

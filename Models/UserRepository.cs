@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using MySql.Data.MySqlClient;
 using System.Security.Cryptography.X509Certificates;
+using System.Net.Http.Headers;
 
 namespace Project_KLP_12.Models
 {
@@ -105,8 +106,43 @@ namespace Project_KLP_12.Models
                 }
 
 
-            } return UserJadwal;
+            }
+            return UserJadwal;
 
-        } 
-    } 
+        }
+        public List<UserModel> GetNilai(int score, string mapel, string class_name, string role)
+        {
+            List<UserModel> DataNilai = new List<UserModel>();
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"SELECT subjects.subject_name, grades.score, students.class_name
+                               FROM grades
+                               JOIN teacher_subjects ON grades.teacher_subject_id = teacher_subjects.id
+                               JOIN subjects ON teacher_subjects.subject_id = subjects.id 
+                               JOIN students ON grades.student_id = students.id";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@class_name", class_name);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DataNilai.Add(new UserModel
+                            {
+                                SubjectName = reader["subject_name"] != DBNull.Value ? reader.GetString("subject_name") : "-",
+                                Nilai = reader["score"] != DBNull.Value ? reader.GetInt32("score") : 0,
+                                ClassName = reader["class_name"] != DBNull.Value ? reader.GetString("class_name") : "-"
+                            });
+
+                            
+                        }
+                    }
+                }
+                return DataNilai;
+            }
+        }
+    }
 }
