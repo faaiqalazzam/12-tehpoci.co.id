@@ -18,7 +18,7 @@ namespace Project_KLP_12.Views
             InitializeComponent();
             currentUser = user;
             LoadData(currentUser);
-            
+
 
         }
 
@@ -31,9 +31,10 @@ namespace Project_KLP_12.Views
 
             LoadJiwa(currentUser);
             LoadPelanggaran(currentUser);
+            LoadKehadiran(currentUser);
             
 
-            
+
 
         }
 
@@ -63,7 +64,7 @@ namespace Project_KLP_12.Views
                 PPCategory.Text = "Poin Kamu Tinggi!";
                 PPCategory.ForeColor = Color.Yellow;
             }
-            else if(user.Pelanggaran >= 75)
+            else if (user.Pelanggaran >= 75)
             {
                 PPCategory.Text = "Potensi DO!";
                 PPCategory.ForeColor = Color.Red;
@@ -72,7 +73,21 @@ namespace Project_KLP_12.Views
 
         private void LoadKehadiran(UserModel user)
         {
-            
+            if (user.Kehadiran >= 80)
+            {
+                EkskulCategory.Text = "Kehadiran Aman!";
+                EkskulCategory.ForeColor = Color.Green;
+            }
+            else if (user.Kehadiran <= 79)
+            {
+                EkskulCategory.Text = "Kehadiran Kurang!";
+                EkskulCategory.ForeColor = Color.Yellow;
+            }
+            else if (user.Kehadiran >= 70)
+            {
+                EkskulCategory.Text = "Kehadiran Sangat Kurang!";
+                EkskulCategory.ForeColor = Color.Red;
+            }
         }
 
 
@@ -111,6 +126,11 @@ namespace Project_KLP_12.Views
         }
 
         private void lblKehadiran_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Jiwa_TextChanged(object sender, EventArgs e)
         {
 
         }
