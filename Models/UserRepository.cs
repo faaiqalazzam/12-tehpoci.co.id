@@ -22,7 +22,7 @@ namespace Project_KLP_12.Models
                 string query = @"
                     SELECT 
                         u.id, u.name, u.email, u.role, 
-                        s.class_name, s.poin_jiwa, s.poin_pelanggaran 
+                        s.class_name, s.poin_jiwa, s.poin_pelanggaran, s.ekskul
                     FROM users u
                     LEFT JOIN students s ON u.id = s.user_id
                     WHERE u.email = @email AND u.password_hash = @password AND u.role = @role";
@@ -44,7 +44,7 @@ namespace Project_KLP_12.Models
                                 Email = reader.GetString("email"),
                                 Role = reader.GetString("role"),
 
-
+                                Ekskul = reader["ekskul"] != DBNull.Value ? reader.GetString("ekskul") : "-",
                                 Kelas = reader["class_name"] != DBNull.Value ? reader.GetString("class_name") : "-",
                                 Jiwa = reader["poin_jiwa"] != DBNull.Value ? Convert.ToInt32(reader["poin_jiwa"]) : 0,
                                 Pelanggaran = reader["poin_pelanggaran"] != DBNull.Value ? Convert.ToInt32(reader["poin_pelanggaran"]) : 0
@@ -82,6 +82,7 @@ namespace Project_KLP_12.Models
                     if (role == "Siswa")
                     {
                         cmd.Parameters.AddWithValue("@class_name", class_name);
+                        
                     }
                     else if (role == "Guru")
                     {

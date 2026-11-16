@@ -14,11 +14,15 @@ namespace Project_KLP_12.Models
         public int Pelanggaran { get; set; }
         public int Kehadiran { get; set; }
 
+        public string Ekskul { get; set;  }
+
         public string SubjectName { get; set; }
         public string TeacherName { get; set;  }
         public string ClassName { get; set; }
 
         public int Nilai { get; set; }
+
+        
 
 
 

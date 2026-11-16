@@ -77,11 +77,11 @@
             textBox11 = new TextBox();
             panel11 = new Panel();
             panel10 = new Panel();
+            dataGridViewJadwal = new DataGridView();
             textBox12 = new TextBox();
             button5 = new Button();
             button6 = new Button();
             panel12 = new Panel();
-            dataGridViewJadwal = new DataGridView();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel7.SuspendLayout();
@@ -134,6 +134,7 @@
             button3.Size = new Size(20, 24);
             button3.TabIndex = 36;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -685,6 +686,15 @@
             panel10.TabIndex = 42;
             panel10.Paint += panel10_Paint;
             // 
+            // dataGridViewJadwal
+            // 
+            dataGridViewJadwal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewJadwal.Location = new Point(8, 32);
+            dataGridViewJadwal.Name = "dataGridViewJadwal";
+            dataGridViewJadwal.Size = new Size(472, 96);
+            dataGridViewJadwal.TabIndex = 41;
+            dataGridViewJadwal.CellContentClick += dataGridViewJadwal_CellContentClick;
+            // 
             // textBox12
             // 
             textBox12.BackColor = SystemColors.ControlLightLight;
@@ -736,15 +746,6 @@
             panel12.Name = "panel12";
             panel12.Size = new Size(3, 32);
             panel12.TabIndex = 45;
-            // 
-            // dataGridViewJadwal
-            // 
-            dataGridViewJadwal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewJadwal.Location = new Point(8, 32);
-            dataGridViewJadwal.Name = "dataGridViewJadwal";
-            dataGridViewJadwal.Size = new Size(472, 96);
-            dataGridViewJadwal.TabIndex = 41;
-            dataGridViewJadwal.CellContentClick += dataGridViewJadwal_CellContentClick;
             // 
             // StudentDashboardForm
             // 

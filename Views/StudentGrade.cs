@@ -27,17 +27,20 @@ namespace Project_KLP_12.Views
         {
             UserRepository repo = new UserRepository();
 
+
+
+
             dataGridViewNilai.AutoGenerateColumns = false;
             dataGridViewNilai.Columns.Clear();
 
-            List<UserModel> DataNilai = repo.GetNilai(0, "", user.ClassName ,user.Role);
+            List<UserModel> DataNilai = repo.GetNilai(0, "", user.ClassName, user.Role);
 
             dataGridViewNilai.Columns.Add(new DataGridViewTextBoxColumn
             {
                 Name = "SubjectName",
                 HeaderText = "Mapel",
                 DataPropertyName = "SubjectName",
-                Width = 550,
+                Width = 350,
             });
 
             dataGridViewNilai.Columns.Add(new DataGridViewTextBoxColumn
@@ -47,8 +50,22 @@ namespace Project_KLP_12.Views
                 DataPropertyName = "Nilai",
                 Width = 150,
             });
+            dataGridViewNilai.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Teacher_Name",
+                HeaderText = "Guru",
+                DataPropertyName = "Teacher_Name",
+                Width = 100
+            });
 
             dataGridViewNilai.DataSource = DataNilai;
+
+            double rataRata = DataNilai.Average(x => x.Nilai);
+
+            int MapelCount = DataNilai.Count;
+
+            MapelTxt.Text = MapelCount.ToString();
+            rataRatatxt.Text = rataRata.ToString();
         }
 
         private void StudentGrade_Load(object sender, EventArgs e)
@@ -72,6 +89,30 @@ namespace Project_KLP_12.Views
         }
 
         private void dataGridViewNilai_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PoinAkademik akademik = new PoinAkademik(currentUser);
+            akademik.Show();
+            this.Hide();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StudentDashboardForm student = new StudentDashboardForm(currentUser);
+            student.Show();
+            this.Hide();
+        }
+
+        private void rataRatatxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MapelTxt_TextChanged(object sender, EventArgs e)
         {
 
         }

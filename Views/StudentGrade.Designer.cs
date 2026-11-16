@@ -40,10 +40,20 @@
             button1 = new Button();
             btnLogout = new Button();
             dataGridViewNilai = new DataGridView();
+            textBox1 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            rataRatatxt = new TextBox();
+            panel2 = new Panel();
+            textBox5 = new TextBox();
+            panel3 = new Panel();
+            MapelTxt = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewNilai).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // button3
@@ -58,6 +68,7 @@
             button3.Size = new Size(20, 24);
             button3.TabIndex = 36;
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
@@ -156,6 +167,7 @@
             button1.Size = new Size(20, 20);
             button1.TabIndex = 34;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // btnLogout
             // 
@@ -174,24 +186,131 @@
             // 
             // dataGridViewNilai
             // 
+            dataGridViewNilai.BackgroundColor = SystemColors.Control;
+            dataGridViewNilai.BorderStyle = BorderStyle.None;
             dataGridViewNilai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewNilai.Location = new Point(80, 192);
+            dataGridViewNilai.Location = new Point(88, 216);
             dataGridViewNilai.Name = "dataGridViewNilai";
             dataGridViewNilai.Size = new Size(672, 216);
             dataGridViewNilai.TabIndex = 51;
             dataGridViewNilai.CellContentClick += dataGridViewNilai_CellContentClick;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = SystemColors.ButtonFace;
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Bold);
+            textBox1.Location = new Point(88, 24);
+            textBox1.Name = "textBox1";
+            textBox1.ReadOnly = true;
+            textBox1.Size = new Size(82, 20);
+            textBox1.TabIndex = 52;
+            textBox1.Text = "Nilai Saya";
+            // 
+            // textBox3
+            // 
+            textBox3.BackColor = SystemColors.ButtonFace;
+            textBox3.BorderStyle = BorderStyle.None;
+            textBox3.Font = new Font("Trebuchet MS", 6.75F, FontStyle.Bold);
+            textBox3.ForeColor = SystemColors.WindowFrame;
+            textBox3.Location = new Point(88, 40);
+            textBox3.Name = "textBox3";
+            textBox3.ReadOnly = true;
+            textBox3.Size = new Size(82, 11);
+            textBox3.TabIndex = 53;
+            textBox3.Text = "Semester1";
+            // 
+            // textBox4
+            // 
+            textBox4.BackColor = SystemColors.ButtonHighlight;
+            textBox4.BorderStyle = BorderStyle.None;
+            textBox4.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Bold);
+            textBox4.Location = new Point(16, 16);
+            textBox4.Name = "textBox4";
+            textBox4.ReadOnly = true;
+            textBox4.Size = new Size(82, 20);
+            textBox4.TabIndex = 54;
+            textBox4.Text = "Rata Rata";
+            // 
+            // rataRatatxt
+            // 
+            rataRatatxt.BackColor = SystemColors.ButtonHighlight;
+            rataRatatxt.BorderStyle = BorderStyle.None;
+            rataRatatxt.Font = new Font("Trebuchet MS", 15.75F);
+            rataRatatxt.Location = new Point(16, 48);
+            rataRatatxt.Name = "rataRatatxt";
+            rataRatatxt.ReadOnly = true;
+            rataRatatxt.Size = new Size(82, 25);
+            rataRatatxt.TabIndex = 55;
+            rataRatatxt.Text = "0";
+            rataRatatxt.TextChanged += rataRatatxt_TextChanged;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.Control;
+            panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
+            panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.Controls.Add(rataRatatxt);
+            panel2.Controls.Add(textBox4);
+            panel2.ForeColor = SystemColors.ControlLight;
+            panel2.Location = new Point(88, 72);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 120);
+            panel2.TabIndex = 56;
+            // 
+            // textBox5
+            // 
+            textBox5.BackColor = SystemColors.ButtonHighlight;
+            textBox5.BorderStyle = BorderStyle.None;
+            textBox5.Font = new Font("Trebuchet MS", 12.75F, FontStyle.Bold);
+            textBox5.Location = new Point(16, 16);
+            textBox5.Name = "textBox5";
+            textBox5.ReadOnly = true;
+            textBox5.Size = new Size(176, 20);
+            textBox5.TabIndex = 54;
+            textBox5.Text = "Mata Pelajaran";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.Control;
+            panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
+            panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Controls.Add(MapelTxt);
+            panel3.Controls.Add(textBox5);
+            panel3.ForeColor = SystemColors.ControlLight;
+            panel3.Location = new Point(296, 72);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 120);
+            panel3.TabIndex = 57;
+            // 
+            // MapelTxt
+            // 
+            MapelTxt.BackColor = SystemColors.ButtonHighlight;
+            MapelTxt.BorderStyle = BorderStyle.None;
+            MapelTxt.Font = new Font("Trebuchet MS", 15.75F);
+            MapelTxt.Location = new Point(16, 48);
+            MapelTxt.Name = "MapelTxt";
+            MapelTxt.ReadOnly = true;
+            MapelTxt.Size = new Size(82, 25);
+            MapelTxt.TabIndex = 55;
+            MapelTxt.Text = "0";
+            MapelTxt.TextChanged += MapelTxt_TextChanged;
             // 
             // StudentGrade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel3);
+            Controls.Add(textBox3);
+            Controls.Add(textBox1);
             Controls.Add(dataGridViewNilai);
             Controls.Add(lblNamaSiswa);
             Controls.Add(lblKelasSiswa);
             Controls.Add(textBox2);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
+            Controls.Add(panel2);
             Name = "StudentGrade";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentGrade";
@@ -199,6 +318,10 @@
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridViewNilai).EndInit();
+            panel2.ResumeLayout(false);
+            panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -215,5 +338,13 @@
         private Button button1;
         private Button btnLogout;
         private DataGridView dataGridViewNilai;
+        private TextBox textBox1;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private TextBox rataRatatxt;
+        private Panel panel2;
+        private TextBox textBox5;
+        private Panel panel3;
+        private TextBox MapelTxt;
     }
 }

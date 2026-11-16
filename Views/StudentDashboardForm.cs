@@ -184,7 +184,9 @@ namespace Project_KLP_12
 
         private void button5_Click_1(object sender, EventArgs e)
         {
-
+            StudentGrade grade = new StudentGrade(currentUser);
+            grade.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -217,6 +219,13 @@ namespace Project_KLP_12
         private void dataGridViewJadwal_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            PoinAkademik poin = new PoinAkademik(currentUser);
+            poin.Show();
+            this.Hide();
         }
     }
 }
