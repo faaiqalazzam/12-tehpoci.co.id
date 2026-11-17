@@ -30,10 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GuruDahsboard));
             button6 = new Button();
-            lbKehadiran = new TextBox();
+            lbStatus = new TextBox();
             textBox10 = new TextBox();
             panel5 = new Panel();
-            lbPelanggaran1 = new TextBox();
+            lblKelasAll = new TextBox();
             textBox8 = new TextBox();
             panel9 = new Panel();
             panel6 = new Panel();
@@ -51,16 +51,16 @@
             panel11 = new Panel();
             panel4 = new Panel();
             panel10 = new Panel();
-            FlowLayoutPanelJadwal = new FlowLayoutPanel();
+            dataGridView1 = new DataGridView();
             textBox12 = new TextBox();
             button5 = new Button();
             panel12 = new Panel();
-            lbPoinJiwa = new TextBox();
+            lbMapel = new TextBox();
             button4 = new Button();
             pictureBox3 = new PictureBox();
             button3 = new Button();
-            lblNamaSiswa = new TextBox();
-            lblKelasSiswa = new TextBox();
+            lblNama = new TextBox();
+            lblKode = new TextBox();
             textBox2 = new TextBox();
             pictureBox1 = new PictureBox();
             button2 = new Button();
@@ -80,6 +80,7 @@
             panel14.SuspendLayout();
             panel4.SuspendLayout();
             panel10.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel7.SuspendLayout();
@@ -103,17 +104,17 @@
             button6.TextAlign = ContentAlignment.TopLeft;
             button6.UseVisualStyleBackColor = false;
             // 
-            // lbKehadiran
+            // lbStatus
             // 
-            lbKehadiran.BackColor = SystemColors.ControlLightLight;
-            lbKehadiran.BorderStyle = BorderStyle.None;
-            lbKehadiran.Font = new Font("Trebuchet MS", 14.75F, FontStyle.Bold);
-            lbKehadiran.Location = new Point(8, 32);
-            lbKehadiran.Name = "lbKehadiran";
-            lbKehadiran.ReadOnly = true;
-            lbKehadiran.Size = new Size(106, 23);
-            lbKehadiran.TabIndex = 43;
-            lbKehadiran.Text = "0";
+            lbStatus.BackColor = SystemColors.ControlLightLight;
+            lbStatus.BorderStyle = BorderStyle.None;
+            lbStatus.Font = new Font("Trebuchet MS", 10.75F, FontStyle.Bold);
+            lbStatus.Location = new Point(8, 32);
+            lbStatus.Name = "lbStatus";
+            lbStatus.ReadOnly = true;
+            lbStatus.Size = new Size(106, 17);
+            lbStatus.TabIndex = 43;
+            lbStatus.Text = "-";
             // 
             // textBox10
             // 
@@ -125,13 +126,13 @@
             textBox10.ReadOnly = true;
             textBox10.Size = new Size(106, 16);
             textBox10.TabIndex = 42;
-            textBox10.Text = "Kehadiran";
+            textBox10.Text = "Kompetensi";
             // 
             // panel5
             // 
             panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
             panel5.BackgroundImageLayout = ImageLayout.Stretch;
-            panel5.Controls.Add(lbPelanggaran1);
+            panel5.Controls.Add(lblKelasAll);
             panel5.Controls.Add(textBox8);
             panel5.Controls.Add(panel9);
             panel5.Location = new Point(64, 224);
@@ -139,17 +140,18 @@
             panel5.Size = new Size(160, 64);
             panel5.TabIndex = 66;
             // 
-            // lbPelanggaran1
+            // lblKelasAll
             // 
-            lbPelanggaran1.BackColor = SystemColors.ControlLightLight;
-            lbPelanggaran1.BorderStyle = BorderStyle.None;
-            lbPelanggaran1.Font = new Font("Trebuchet MS", 14.75F, FontStyle.Bold);
-            lbPelanggaran1.Location = new Point(16, 32);
-            lbPelanggaran1.Name = "lbPelanggaran1";
-            lbPelanggaran1.ReadOnly = true;
-            lbPelanggaran1.Size = new Size(106, 23);
-            lbPelanggaran1.TabIndex = 41;
-            lbPelanggaran1.Text = "0";
+            lblKelasAll.BackColor = SystemColors.ControlLightLight;
+            lblKelasAll.BorderStyle = BorderStyle.None;
+            lblKelasAll.Font = new Font("Trebuchet MS", 14.75F, FontStyle.Bold);
+            lblKelasAll.Location = new Point(16, 32);
+            lblKelasAll.Name = "lblKelasAll";
+            lblKelasAll.ReadOnly = true;
+            lblKelasAll.Size = new Size(106, 23);
+            lblKelasAll.TabIndex = 41;
+            lblKelasAll.Text = "0";
+            lblKelasAll.TextChanged += lbPelanggaran1_TextChanged;
             // 
             // textBox8
             // 
@@ -161,7 +163,7 @@
             textBox8.ReadOnly = true;
             textBox8.Size = new Size(106, 16);
             textBox8.TabIndex = 40;
-            textBox8.Text = "Pelanggaran";
+            textBox8.Text = "Kelas Diajari";
             // 
             // panel9
             // 
@@ -337,7 +339,7 @@
             // 
             panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
             panel4.BackgroundImageLayout = ImageLayout.Stretch;
-            panel4.Controls.Add(lbKehadiran);
+            panel4.Controls.Add(lbStatus);
             panel4.Controls.Add(textBox10);
             panel4.Location = new Point(408, 224);
             panel4.Name = "panel4";
@@ -348,24 +350,23 @@
             // 
             panel10.BackgroundImage = (Image)resources.GetObject("panel10.BackgroundImage");
             panel10.BackgroundImageLayout = ImageLayout.Stretch;
-            panel10.Controls.Add(FlowLayoutPanelJadwal);
+            panel10.Controls.Add(dataGridView1);
             panel10.Controls.Add(textBox12);
             panel10.Location = new Point(64, 304);
             panel10.Name = "panel10";
             panel10.Size = new Size(488, 136);
             panel10.TabIndex = 67;
             // 
-            // FlowLayoutPanelJadwal
+            // dataGridView1
             // 
-            FlowLayoutPanelJadwal.AutoScroll = true;
-            FlowLayoutPanelJadwal.BackColor = SystemColors.InactiveBorder;
-            FlowLayoutPanelJadwal.FlowDirection = FlowDirection.TopDown;
-            FlowLayoutPanelJadwal.Location = new Point(8, 32);
-            FlowLayoutPanelJadwal.Name = "FlowLayoutPanelJadwal";
-            FlowLayoutPanelJadwal.Size = new Size(472, 96);
-            FlowLayoutPanelJadwal.TabIndex = 41;
-            FlowLayoutPanelJadwal.WrapContents = false;
-            FlowLayoutPanelJadwal.Paint += FlowLayoutPanelJadwal_Paint;
+            dataGridView1.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.Azure;
+            dataGridView1.Location = new Point(8, 32);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.Size = new Size(464, 96);
+            dataGridView1.TabIndex = 41;
             // 
             // textBox12
             // 
@@ -403,17 +404,18 @@
             panel12.Size = new Size(3, 32);
             panel12.TabIndex = 71;
             // 
-            // lbPoinJiwa
+            // lbMapel
             // 
-            lbPoinJiwa.BackColor = SystemColors.ControlLightLight;
-            lbPoinJiwa.BorderStyle = BorderStyle.None;
-            lbPoinJiwa.Font = new Font("Trebuchet MS", 14.75F, FontStyle.Bold);
-            lbPoinJiwa.Location = new Point(16, 32);
-            lbPoinJiwa.Name = "lbPoinJiwa";
-            lbPoinJiwa.ReadOnly = true;
-            lbPoinJiwa.Size = new Size(106, 23);
-            lbPoinJiwa.TabIndex = 42;
-            lbPoinJiwa.Text = "0";
+            lbMapel.BackColor = SystemColors.ControlLightLight;
+            lbMapel.BorderStyle = BorderStyle.None;
+            lbMapel.Font = new Font("Trebuchet MS", 10.75F, FontStyle.Bold);
+            lbMapel.Location = new Point(16, 32);
+            lbMapel.Name = "lbMapel";
+            lbMapel.ReadOnly = true;
+            lbMapel.Size = new Size(106, 17);
+            lbMapel.TabIndex = 42;
+            lbMapel.Text = "-";
+            lbMapel.TextChanged += lbSiswaAll_TextChanged;
             // 
             // button4
             // 
@@ -452,34 +454,34 @@
             button3.TabIndex = 36;
             button3.UseVisualStyleBackColor = false;
             // 
-            // lblNamaSiswa
+            // lblNama
             // 
-            lblNamaSiswa.BackColor = SystemColors.ButtonFace;
-            lblNamaSiswa.BorderStyle = BorderStyle.None;
-            lblNamaSiswa.Font = new Font("Trebuchet MS", 8.75F, FontStyle.Bold);
-            lblNamaSiswa.Location = new Point(432, 17);
-            lblNamaSiswa.Name = "lblNamaSiswa";
-            lblNamaSiswa.ReadOnly = true;
-            lblNamaSiswa.Size = new Size(82, 14);
-            lblNamaSiswa.TabIndex = 47;
-            lblNamaSiswa.Text = "username";
-            lblNamaSiswa.TextAlign = HorizontalAlignment.Right;
-            lblNamaSiswa.TextChanged += lblNamaSiswa_TextChanged;
+            lblNama.BackColor = SystemColors.ButtonFace;
+            lblNama.BorderStyle = BorderStyle.None;
+            lblNama.Font = new Font("Trebuchet MS", 8.75F, FontStyle.Bold);
+            lblNama.Location = new Point(432, 17);
+            lblNama.Name = "lblNama";
+            lblNama.ReadOnly = true;
+            lblNama.Size = new Size(82, 14);
+            lblNama.TabIndex = 47;
+            lblNama.Text = "username";
+            lblNama.TextAlign = HorizontalAlignment.Right;
+            lblNama.TextChanged += lblNamaSiswa_TextChanged;
             // 
-            // lblKelasSiswa
+            // lblKode
             // 
-            lblKelasSiswa.BackColor = SystemColors.ButtonFace;
-            lblKelasSiswa.BorderStyle = BorderStyle.None;
-            lblKelasSiswa.Font = new Font("Trebuchet MS", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblKelasSiswa.ForeColor = SystemColors.ControlDarkDark;
-            lblKelasSiswa.Location = new Point(432, 31);
-            lblKelasSiswa.Name = "lblKelasSiswa";
-            lblKelasSiswa.ReadOnly = true;
-            lblKelasSiswa.Size = new Size(82, 13);
-            lblKelasSiswa.TabIndex = 52;
-            lblKelasSiswa.Text = "XI RPL 2";
-            lblKelasSiswa.TextAlign = HorizontalAlignment.Right;
-            lblKelasSiswa.TextChanged += lblKelasSiswa_TextChanged;
+            lblKode.BackColor = SystemColors.ButtonFace;
+            lblKode.BorderStyle = BorderStyle.None;
+            lblKode.Font = new Font("Trebuchet MS", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblKode.ForeColor = SystemColors.ControlDarkDark;
+            lblKode.Location = new Point(432, 31);
+            lblKode.Name = "lblKode";
+            lblKode.ReadOnly = true;
+            lblKode.Size = new Size(82, 13);
+            lblKode.TabIndex = 52;
+            lblKode.Text = "XI RPL 2";
+            lblKode.TextAlign = HorizontalAlignment.Right;
+            lblKode.TextChanged += lblKelasSiswa_TextChanged;
             // 
             // textBox2
             // 
@@ -573,7 +575,7 @@
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Stretch;
-            panel2.Controls.Add(lbPoinJiwa);
+            panel2.Controls.Add(lbMapel);
             panel2.Controls.Add(textBox9);
             panel2.Location = new Point(240, 224);
             panel2.Name = "panel2";
@@ -590,7 +592,7 @@
             textBox9.ReadOnly = true;
             textBox9.Size = new Size(106, 16);
             textBox9.TabIndex = 41;
-            textBox9.Text = "Jiwa";
+            textBox9.Text = "Mata Pelajaran";
             // 
             // pictureBox2
             // 
@@ -629,8 +631,8 @@
             Controls.Add(button5);
             Controls.Add(panel12);
             Controls.Add(button4);
-            Controls.Add(lblNamaSiswa);
-            Controls.Add(lblKelasSiswa);
+            Controls.Add(lblNama);
+            Controls.Add(lblKode);
             Controls.Add(textBox2);
             Controls.Add(pictureBox1);
             Controls.Add(panel8);
@@ -655,6 +657,7 @@
             panel4.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel7.ResumeLayout(false);
@@ -669,10 +672,10 @@
         #endregion
 
         private Button button6;
-        private TextBox lbKehadiran;
+        private TextBox lbStatus;
         private TextBox textBox10;
         private Panel panel5;
-        private TextBox lbPelanggaran1;
+        private TextBox lblKelasAll;
         private TextBox textBox8;
         private Panel panel9;
         private Panel panel6;
@@ -690,16 +693,15 @@
         private Panel panel11;
         private Panel panel4;
         private Panel panel10;
-        private FlowLayoutPanel FlowLayoutPanelJadwal;
         private TextBox textBox12;
         private Button button5;
         private Panel panel12;
-        private TextBox lbPoinJiwa;
+        private TextBox lbMapel;
         private Button button4;
         private PictureBox pictureBox3;
         private Button button3;
-        private TextBox lblNamaSiswa;
-        private TextBox lblKelasSiswa;
+        private TextBox lblNama;
+        private TextBox lblKode;
         private TextBox textBox2;
         private PictureBox pictureBox1;
         private Button button2;
@@ -712,5 +714,6 @@
         private TextBox textBox9;
         private PictureBox pictureBox2;
         private Panel panel1;
+        private DataGridView dataGridView1;
     }
 }

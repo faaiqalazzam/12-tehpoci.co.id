@@ -13,7 +13,7 @@ namespace Project_KLP_12
         {
             InitializeComponent();
 
-            cmbRole.SelectedItem = "Siswa";
+            cmbRole.SelectedItem = "Guru";
         }
 
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -55,17 +55,25 @@ namespace Project_KLP_12
             UserRepository repo = new UserRepository();
             UserModel user = repo.Authenticate(txtEmail.Text, txtPassword.Text, cmbRole.Text);
 
-            if (cmbRole.Text == "Siswa")
+            if (user != null)
             {
-                StudentDashboardForm dashboard = new StudentDashboardForm(user);
-                dashboard.Show();
-                this.Hide();
+                if (cmbRole.Text == "Siswa")
+                {
+                    StudentDashboardForm dashboard = new StudentDashboardForm(user);
+                    dashboard.Show();
+                    this.Hide();
+                }
+                if (cmbRole.Text == "Guru")
+                {
+                    GuruDahsboard dashboards = new GuruDahsboard(user);
+                    dashboards.Show();
+                    this.Hide();
+                }
+
             }
-            if (cmbRole.Text == "Guru")
+            else
             {
-                GuruDahsboard dashboards = new GuruDahsboard(user);
-                dashboards.Show();
-                this.Hide();
+                MessageBox.Show("Password Atau Email Salah!");
             }
 
 

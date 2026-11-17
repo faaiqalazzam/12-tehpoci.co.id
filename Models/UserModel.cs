@@ -20,7 +20,12 @@ namespace Project_KLP_12.Models
         public string TeacherName { get; set;  }
         public string ClassName { get; set; }
 
+        public string teacherCode { get; set; }
+
         public int Nilai { get; set; }
+
+        public int Kompetensi { get; set; }
+        public string teacherSubject { get; set; }
 
         
 

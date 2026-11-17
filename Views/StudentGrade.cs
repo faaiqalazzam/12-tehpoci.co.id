@@ -27,6 +27,8 @@ namespace Project_KLP_12.Views
         {
             UserRepository repo = new UserRepository();
 
+            lblNamaSiswa.Text = user.Name;
+            lblKelasSiswa.Text = user.Kelas;
 
 
 
@@ -113,6 +115,16 @@ namespace Project_KLP_12.Views
         }
 
         private void MapelTxt_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void StudentGrade_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
         }

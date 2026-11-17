@@ -688,6 +688,8 @@
             // 
             // dataGridViewJadwal
             // 
+            dataGridViewJadwal.BackgroundColor = SystemColors.ControlLightLight;
+            dataGridViewJadwal.BorderStyle = BorderStyle.None;
             dataGridViewJadwal.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewJadwal.Location = new Point(8, 32);
             dataGridViewJadwal.Name = "dataGridViewJadwal";

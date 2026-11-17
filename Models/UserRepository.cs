@@ -22,9 +22,10 @@ namespace Project_KLP_12.Models
                 string query = @"
                     SELECT 
                         u.id, u.name, u.email, u.role, 
-                        s.class_name, s.poin_jiwa, s.poin_pelanggaran, s.ekskul
+                        s.class_name, s.poin_jiwa, s.poin_pelanggaran, s.ekskul, t.teacher_number, t.kompetensi
                     FROM users u
                     LEFT JOIN students s ON u.id = s.user_id
+                    LEFT JOIN teachers t ON u.id = t.user_id
                     WHERE u.email = @email AND u.password_hash = @password AND u.role = @role";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -47,7 +48,11 @@ namespace Project_KLP_12.Models
                                 Ekskul = reader["ekskul"] != DBNull.Value ? reader.GetString("ekskul") : "-",
                                 Kelas = reader["class_name"] != DBNull.Value ? reader.GetString("class_name") : "-",
                                 Jiwa = reader["poin_jiwa"] != DBNull.Value ? Convert.ToInt32(reader["poin_jiwa"]) : 0,
-                                Pelanggaran = reader["poin_pelanggaran"] != DBNull.Value ? Convert.ToInt32(reader["poin_pelanggaran"]) : 0
+                                Pelanggaran = reader["poin_pelanggaran"] != DBNull.Value ? Convert.ToInt32(reader["poin_pelanggaran"]) : 0,
+                                teacherCode = reader["teacher_number"] != DBNull.Value ? reader.GetString("teacher_number") : "-",
+                                Kompetensi = reader["kompetensi"] != DBNull.Value ? Convert.ToInt32(reader["kompetensi"]) : 0,
+                                
+                                
                             };
                         }
                     }
@@ -75,7 +80,7 @@ namespace Project_KLP_12.Models
               JOIN subjects ON teacher_subjects.subject_id = subjects.id
               JOIN teachers ON teacher_subjects.teacher_id = teachers.id
               JOIN classes ON teacher_subjects.class_id = classes.id
-              WHERE teacher_subjects.teacher_id = @teacherId";
+              WHERE teachers.user_id = @teacherId";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {

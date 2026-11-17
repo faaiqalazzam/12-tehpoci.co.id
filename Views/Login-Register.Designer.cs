@@ -63,7 +63,7 @@
             txtEmail.PlaceholderText = "Email";
             txtEmail.Size = new Size(227, 23);
             txtEmail.TabIndex = 1;
-            txtEmail.Text = "budi@sekolah.com";
+            txtEmail.Text = "okta@sekolah.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
             // 
             // txtPassword

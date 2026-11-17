@@ -48,6 +48,7 @@
             textBox5 = new TextBox();
             panel3 = new Panel();
             MapelTxt = new TextBox();
+            panel4 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -186,12 +187,15 @@
             // 
             // dataGridViewNilai
             // 
-            dataGridViewNilai.BackgroundColor = SystemColors.Control;
+            dataGridViewNilai.BackgroundColor = SystemColors.ControlLightLight;
             dataGridViewNilai.BorderStyle = BorderStyle.None;
+            dataGridViewNilai.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridViewNilai.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewNilai.Location = new Point(88, 216);
+            dataGridViewNilai.GridColor = SystemColors.ControlLightLight;
+            dataGridViewNilai.Location = new Point(104, 224);
             dataGridViewNilai.Name = "dataGridViewNilai";
-            dataGridViewNilai.Size = new Size(672, 216);
+            dataGridViewNilai.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewNilai.Size = new Size(656, 184);
             dataGridViewNilai.TabIndex = 51;
             dataGridViewNilai.CellContentClick += dataGridViewNilai_CellContentClick;
             // 
@@ -213,12 +217,13 @@
             textBox3.BorderStyle = BorderStyle.None;
             textBox3.Font = new Font("Trebuchet MS", 6.75F, FontStyle.Bold);
             textBox3.ForeColor = SystemColors.WindowFrame;
-            textBox3.Location = new Point(88, 40);
+            textBox3.Location = new Point(88, 48);
             textBox3.Name = "textBox3";
             textBox3.ReadOnly = true;
             textBox3.Size = new Size(82, 11);
             textBox3.TabIndex = 53;
             textBox3.Text = "Semester1";
+            textBox3.TextChanged += textBox3_TextChanged;
             // 
             // textBox4
             // 
@@ -296,6 +301,17 @@
             MapelTxt.Text = "0";
             MapelTxt.TextChanged += MapelTxt_TextChanged;
             // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.Control;
+            panel4.BackgroundImage = (Image)resources.GetObject("panel4.BackgroundImage");
+            panel4.BackgroundImageLayout = ImageLayout.Stretch;
+            panel4.ForeColor = SystemColors.ControlLight;
+            panel4.Location = new Point(88, 208);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(688, 216);
+            panel4.TabIndex = 57;
+            // 
             // StudentGrade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -311,9 +327,11 @@
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Controls.Add(panel2);
+            Controls.Add(panel4);
             Name = "StudentGrade";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "StudentGrade";
+            Load += StudentGrade_Load_1;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -346,5 +364,6 @@
         private TextBox textBox5;
         private Panel panel3;
         private TextBox MapelTxt;
+        private Panel panel4;
     }
 }
