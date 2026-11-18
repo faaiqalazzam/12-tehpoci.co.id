@@ -26,12 +26,12 @@ namespace Project_KLP_12.Views
 
             lblKode.Text = user.teacherCode;
             lblNama.Text = user.Name;
-            
-
-            
 
 
-            
+
+
+
+
 
             if (dataGridView1 != null)
             {
@@ -56,7 +56,15 @@ namespace Project_KLP_12.Views
                 });
 
                 dataGridView1.DataSource = Jadwal;
-            } 
+                dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Black;
+                dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dataGridView1.DefaultCellStyle.SelectionBackColor = Color.White;
+                dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+                dataGridView1.RowHeadersVisible = false;
+
+
+            }
         }
         private void Kompeten(UserModel user)
         {
@@ -77,11 +85,11 @@ namespace Project_KLP_12.Views
         }
         private void teacherSubject(UserModel user)
         {
-            
+
         }
 
-            
-                
+
+
         private void GuruDahsboard_Load(object sender, EventArgs e)
         {
 
@@ -113,6 +121,23 @@ namespace Project_KLP_12.Views
         }
 
         private void lbSiswaAll_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbStatus_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            Form1 form = new Form1();
+            form.Show();
+            this.Hide();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
