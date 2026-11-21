@@ -40,7 +40,9 @@
             textBox4 = new TextBox();
             textBox3 = new TextBox();
             panel2 = new Panel();
+            button2 = new Button();
             panel3 = new Panel();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)userRepositoryBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
@@ -54,10 +56,11 @@
             btnLogin.BackgroundImage = (Image)resources.GetObject("btnLogin.BackgroundImage");
             btnLogin.BackgroundImageLayout = ImageLayout.Zoom;
             btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             btnLogin.ForeColor = SystemColors.ButtonHighlight;
-            btnLogin.Location = new Point(40, 256);
+            btnLogin.Location = new Point(40, 248);
             btnLogin.Name = "btnLogin";
-            btnLogin.Size = new Size(240, 48);
+            btnLogin.Size = new Size(232, 48);
             btnLogin.TabIndex = 0;
             btnLogin.Text = "Login";
             btnLogin.UseVisualStyleBackColor = false;
@@ -67,10 +70,10 @@
             // 
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.ForeColor = SystemColors.WindowText;
-            txtEmail.Location = new Point(8, 10);
+            txtEmail.Location = new Point(40, 10);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = "Email";
-            txtEmail.Size = new Size(208, 16);
+            txtEmail.Size = new Size(160, 16);
             txtEmail.TabIndex = 1;
             txtEmail.Text = "okta@sekolah.com";
             txtEmail.TextChanged += txtEmail_TextChanged;
@@ -79,10 +82,10 @@
             // 
             txtPassword.BorderStyle = BorderStyle.None;
             txtPassword.ForeColor = SystemColors.WindowText;
-            txtPassword.Location = new Point(8, 10);
+            txtPassword.Location = new Point(40, 10);
             txtPassword.Name = "txtPassword";
             txtPassword.PlaceholderText = "Password";
-            txtPassword.Size = new Size(200, 16);
+            txtPassword.Size = new Size(160, 16);
             txtPassword.TabIndex = 2;
             txtPassword.Text = "12345";
             txtPassword.UseSystemPasswordChar = true;
@@ -97,7 +100,7 @@
             cmbRole.ForeColor = SystemColors.WindowText;
             cmbRole.FormattingEnabled = true;
             cmbRole.Items.AddRange(new object[] { "Siswa", "Guru", "Operator" });
-            cmbRole.Location = new Point(40, 208);
+            cmbRole.Location = new Point(40, 216);
             cmbRole.Name = "cmbRole";
             cmbRole.Size = new Size(232, 23);
             cmbRole.TabIndex = 3;
@@ -115,7 +118,7 @@
             pictureBox1.InitialImage = null;
             pictureBox1.Location = new Point(-23, -1);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(831, 450);
+            pictureBox1.Size = new Size(831, 465);
             pictureBox1.TabIndex = 4;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -140,19 +143,21 @@
             // textBox4
             // 
             textBox4.BorderStyle = BorderStyle.None;
-            textBox4.Location = new Point(40, 64);
+            textBox4.Font = new Font("Segoe UI", 8F);
+            textBox4.ForeColor = SystemColors.AppWorkspace;
+            textBox4.Location = new Point(40, 56);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(176, 16);
+            textBox4.Size = new Size(176, 15);
             textBox4.TabIndex = 5;
             textBox4.Text = "Please Fill Out The Forms Below.";
             // 
             // textBox3
             // 
             textBox3.BorderStyle = BorderStyle.None;
-            textBox3.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox3.Font = new Font("Segoe UI", 16.25F, FontStyle.Bold);
             textBox3.Location = new Point(40, 24);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(152, 36);
+            textBox3.Size = new Size(152, 29);
             textBox3.TabIndex = 4;
             textBox3.Text = "Welcome!";
             // 
@@ -161,22 +166,52 @@
             panel2.BackColor = Color.FloralWhite;
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
             panel2.BackgroundImageLayout = ImageLayout.Zoom;
+            panel2.Controls.Add(button2);
             panel2.Controls.Add(txtEmail);
             panel2.Location = new Point(40, 104);
             panel2.Name = "panel2";
             panel2.Size = new Size(232, 40);
             panel2.TabIndex = 6;
             // 
+            // button2
+            // 
+            button2.BackColor = Color.MintCream;
+            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
+            button2.BackgroundImageLayout = ImageLayout.Zoom;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.ForeColor = SystemColors.ButtonHighlight;
+            button2.Location = new Point(8, 10);
+            button2.Name = "button2";
+            button2.Size = new Size(16, 16);
+            button2.TabIndex = 9;
+            button2.Text = "Login";
+            button2.UseVisualStyleBackColor = false;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.FloralWhite;
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
             panel3.BackgroundImageLayout = ImageLayout.Zoom;
+            panel3.Controls.Add(button1);
             panel3.Controls.Add(txtPassword);
-            panel3.Location = new Point(40, 152);
+            panel3.Location = new Point(40, 160);
             panel3.Name = "panel3";
             panel3.Size = new Size(232, 40);
             panel3.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.MintCream;
+            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
+            button1.BackgroundImageLayout = ImageLayout.Zoom;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.ForeColor = SystemColors.ButtonHighlight;
+            button1.Location = new Point(8, 10);
+            button1.Name = "button1";
+            button1.Size = new Size(16, 16);
+            button1.TabIndex = 8;
+            button1.Text = "Login";
+            button1.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -213,5 +248,7 @@
         private BindingSource userRepositoryBindingSource;
         private Panel panel2;
         private Panel panel3;
+        private Button button2;
+        private Button button1;
     }
 }

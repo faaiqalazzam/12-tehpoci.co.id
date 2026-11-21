@@ -49,6 +49,7 @@
             panel3 = new Panel();
             MapelTxt = new TextBox();
             panel4 = new Panel();
+            panel5 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -83,6 +84,7 @@
             button2.Size = new Size(20, 20);
             button2.TabIndex = 35;
             button2.UseVisualStyleBackColor = false;
+            button2.Click += this.button2_Click;
             // 
             // lblNamaSiswa
             // 
@@ -145,6 +147,7 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(42, 453);
             panel1.TabIndex = 46;
+            panel1.Paint += this.panel1_Paint;
             // 
             // pictureBox3
             // 
@@ -155,6 +158,7 @@
             pictureBox3.Size = new Size(20, 20);
             pictureBox3.TabIndex = 34;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += this.pictureBox3_Click;
             // 
             // button1
             // 
@@ -184,6 +188,7 @@
             btnLogout.TabIndex = 9;
             btnLogout.TextAlign = ContentAlignment.MiddleLeft;
             btnLogout.UseVisualStyleBackColor = true;
+            btnLogout.Click += this.btnLogout_Click;
             // 
             // dataGridViewNilai
             // 
@@ -312,11 +317,22 @@
             panel4.Size = new Size(688, 216);
             panel4.TabIndex = 57;
             // 
+            // panel5
+            // 
+            panel5.BackgroundImage = (Image)resources.GetObject("panel5.BackgroundImage");
+            panel5.BackgroundImageLayout = ImageLayout.Stretch;
+            panel5.Location = new Point(36, 115);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(4, 33);
+            panel5.TabIndex = 69;
+            panel5.Paint += panel5_Paint;
+            // 
             // StudentGrade
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(panel5);
             Controls.Add(panel3);
             Controls.Add(textBox3);
             Controls.Add(textBox1);
@@ -365,5 +381,6 @@
         private Panel panel3;
         private TextBox MapelTxt;
         private Panel panel4;
+        private Panel panel5;
     }
 }

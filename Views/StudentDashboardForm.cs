@@ -67,13 +67,11 @@ namespace Project_KLP_12
             }
             dataGridViewJadwal.DataSource = Jadwal;
 
-            // Hide internal cell grid lines
             dataGridViewJadwal.CellBorderStyle = DataGridViewCellBorderStyle.None;
 
-            // Optional: Hide the outer border of the table
+   
             dataGridViewJadwal.BorderStyle = BorderStyle.None;
 
-            // Optional: Hide lines on column and row headers
             dataGridViewJadwal.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewJadwal.DefaultCellStyle.SelectionForeColor = Color.Black;
             dataGridViewJadwal.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;

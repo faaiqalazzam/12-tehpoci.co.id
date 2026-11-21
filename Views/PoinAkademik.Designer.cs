@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PoinAkademik));
             panel1 = new Panel();
+            panel7 = new Panel();
             pictureBox3 = new PictureBox();
             button3 = new Button();
             button2 = new Button();
@@ -65,6 +66,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.ControlLightLight;
+            panel1.Controls.Add(panel7);
             panel1.Controls.Add(pictureBox3);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button2);
@@ -74,6 +76,15 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(42, 453);
             panel1.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
+            panel7.BackgroundImageLayout = ImageLayout.Stretch;
+            panel7.Location = new Point(36, 165);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(4, 33);
+            panel7.TabIndex = 69;
             // 
             // pictureBox3
             // 
@@ -420,5 +431,6 @@
         private TextBox textBox8;
         private Panel panel6;
         private TextBox EkskulCategory;
+        private Panel panel7;
     }
 }

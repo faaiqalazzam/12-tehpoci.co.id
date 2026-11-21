@@ -184,7 +184,7 @@
             button4.ForeColor = SystemColors.InactiveBorder;
             button4.Location = new Point(8, 136);
             button4.Name = "button4";
-            button4.Size = new Size(184, 39);
+            button4.Size = new Size(176, 36);
             button4.TabIndex = 72;
             button4.Text = "button4";
             button4.TextAlign = ContentAlignment.TopLeft;
@@ -212,7 +212,7 @@
             panel13.Controls.Add(textBox1);
             panel13.Location = new Point(3, 3);
             panel13.Name = "panel13";
-            panel13.Size = new Size(181, 79);
+            panel13.Size = new Size(173, 77);
             panel13.TabIndex = 45;
             // 
             // textBox14
@@ -260,9 +260,9 @@
             panel14.Controls.Add(textBox15);
             panel14.Controls.Add(textBox16);
             panel14.Controls.Add(textBox17);
-            panel14.Location = new Point(3, 88);
+            panel14.Location = new Point(3, 86);
             panel14.Name = "panel14";
-            panel14.Size = new Size(181, 79);
+            panel14.Size = new Size(173, 74);
             panel14.TabIndex = 47;
             // 
             // textBox15
@@ -320,9 +320,9 @@
             // 
             panel11.BackgroundImage = (Image)resources.GetObject("panel11.BackgroundImage");
             panel11.BackgroundImageLayout = ImageLayout.Zoom;
-            panel11.Location = new Point(8, 8);
+            panel11.Location = new Point(8, 16);
             panel11.Name = "panel11";
-            panel11.Size = new Size(184, 120);
+            panel11.Size = new Size(176, 112);
             panel11.TabIndex = 43;
             // 
             // panel4
